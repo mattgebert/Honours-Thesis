@@ -1,0 +1,118 @@
+\documentclass{article}
+\font\myTitle=cmr12 at 29pt
+\title{\myTitle Thin oxides in graphene devices\\\vspace{5mm}\Large Literature Review}
+\date{\today}
+\author{Matthew Gebert}
+
+%-----------------------PACKAGES-----------------------
+\usepackage{geometry} %Allows changes of margins to document.
+\usepackage{amsmath} %Allows text in equations
+\usepackage{float} %Allows Placement of Images & Tables within pages, not at top etc. ie {table}[H]
+%\usepackage{cite} %You want to refer to a bibtex document? But not needed with natbib.
+\usepackage[super,square]{natbib}%Forces small number citations superscripted.
+%\usepackage[natbibapa]{apacite} For particular citing styles?
+\usepackage[dvipsnames]{xcolor} %Allows custom names and colour designs
+%\usepackage{mathtools}
+%\usepackage{tabularx} %Allows table widths to be set.
+\usepackage[final]{pdfpages} %to insert pdf pages of code.
+\usepackage{hyperref} %Hyperlinking \href{URL}{text}
+\usepackage{cleveref} %Allows text like "Figure" to be automatically generated. "\cref{}" == "Tbl. \ref{}"
+\usepackage{matlab-prettifier} %Matlab Code Inserts
+\usepackage{braket} %Dirac Notations
+\usepackage{rotating} %Allows rotation of an image 
+\usepackage{tabularx} %Allows tables that have multiple lines per cell. https://tex.stackexchange.com/questions/194737/multiline-in-a-table-cell
+\usepackage{dsfont} %Allows symbols like \mathds{1} for identity matrix. 
+\usepackage{caption} %Allows use of subfigure environment with captions inside figure.
+\usepackage{subcaption} %The same as above. https://tex.stackexchange.com/questions/37581
+\usepackage{listings}
+\usepackage{amssymb} %Allows \therefore.
+\usepackage{wrapfig} %Allows wrapping of text around figures. \begin{wrapfigure}[lineheight]{position}{width}
+\usepackage{enumitem} %Allows change of horizontal seperation distances \begin{itemize}[noitemsep,topsep=0pt]
+\usepackage{graphicx} %Enables use of \DeclareGraphicsExtensions command and setting graphics path.
+
+%\usepackage{glossaries} %To make a glossary.  \makeglossaries  \newglossaryentry{latex}{name= , description={}}
+%						\newacronym{gcd}{GCD}{Greatest Common Divisor}
+\usepackage[nottoc,numbib]{tocbibind} %Adds bibliography to TOC.
+\usepackage{subfiles} %Allows a TEX document to be contained within multiple TEX Files.
+
+%-----------------------COMMANDS-----------------------
+%Mimmic Mathematica Behaviour.
+\newcommand{\pd}{\partial}
+%Code to make a glossary entry:
+\newcommand{\gloss}[2]{\paragraph{}\textbf{#1}	\textit{#2}}
+%Code to change colour to blue of a cite.
+\newcommand{\cc}{\hypersetup{citecolor=blue}}
+%Code to add single equation lines to align*'s
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+%Defines a typeset for generating 'code' text.
+\definecolor{lightgrey}{RGB}{200,200,200}
+\newcommand{\code}[1]{\colorbox{lightgray}{\lstinline[basicstyle=\ttfamily\color{black}]|#1|}}
+%Code to add \textit{et al} text.
+\newcommand{\etal}{\textit{et al }}
+\newcommand{\etals}{\textit{et al's}}
+%Tensor product symbol
+\newcommand{\tens}{\mathbin{\mathop{\otimes}}} 
+%Trace text in equations:
+\newcommand{\tr}[1]{\text{Tr}\left[#1\right]}
+%Greater and Less than Similar commands simplified:
+\newcommand{\gsim}{\gtrsim}
+\newcommand{\lsim}{\lesssim}
+
+%-----------------------DOCUMENT SETUP-----------------------
+%Allows display breaks in equations across pages. More condensed.
+\allowdisplaybreaks
+%Allows custom setup of URL link colours:
+\hypersetup{
+	linkcolor={red!50!black},
+	citecolor={blue!50!black},
+	urlcolor={blue!80!black},
+	colorlinks = true,
+	hidelinks=true
+%	pdfborder={0 0 1}
+}
+\AtBeginDocument{\hypersetup{ 
+			pdfborder={10 10 0.1 [1 0]}, %Required to go within "\AtBeginDocument" here otherwise overrided. {HorizontalCornerRadius VerticleCordnerRadius Thickness [Dashes PerUnits] }
+			citebordercolor={0 0 1}, %{R G B} on a scale 0 to 1.
+			linkbordercolor={0 0.9 0}, %{R G B} on a scale 0 to 1.	
+		}}
+%add specific resources
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.svg}
+\graphicspath{ {./Resources/} }
+
+\begin{document}
+	%heading:
+	\newgeometry{left=3cm, bottom=3cm}
+	\maketitle
+	\begin{flushleft}
+		\hrulefill
+	\end{flushleft}
+	\begin{tabularx}{\textwidth}{Xl}
+		Supervisors:&Michael Fuhrer\\
+		&Semonti Bhattacharyya
+	\end{tabularx}\newline
+	\begin{flushleft}
+		\hrulefill
+	\end{flushleft}
+	
+	\begin{center}
+		Physics Honours, Monash University\\Student ID: 24121843\\
+	\end{center}
+	\vspace{1in}
+	
+	\begin{center}
+		\large\textbf{Abstract:}
+	\end{center}
+	
+	I present a review of the use of graphene in electronic devices, both in its shortfalls and exciting properties. The electronic structure is detailed, along with various scattering sources that affect electron transport and ultimately the goal of room temperature, electronic devices. Considering heterostructures and the use of other materials to enhance graphene, I discuss the potential use of hafnium dioxide, and other oxides, as an excellent gate dielectric material for potential use in graphene field-effect devices.
+	\newpage 
+	\renewcommand{\baselinestretch}{0.94}\normalsize
+	\tableofcontents
+	\renewcommand{\baselinestretch}{1}\normalsize
+	
+	
+	
+	
+\bibliographystyle{unsrt}
+\bibliography{PhysicsHonours,External}
+
+\end{document}
