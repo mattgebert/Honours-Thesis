@@ -1,8 +1,4 @@
-\documentclass{article}
-\font\myTitle=cmr12 at 29pt
-\title{\myTitle Thin oxides in graphene devices\\\vspace{5mm}\Large Literature Review}
-\date{\today}
-\author{Matthew Gebert}
+\documentclass{report}
 
 %-----------------------PACKAGES-----------------------
 \usepackage{geometry} %Allows changes of margins to document.
@@ -77,38 +73,65 @@
 		}}
 %add specific resources
 \DeclareGraphicsExtensions{.pdf,.png,.jpg,.svg}
-\graphicspath{ {./Resources/} }
+\graphicspath{ {./graphics/} }
+
+% --------------------- Document ----------------------------
+
+\font\myTitle=cmr12 at 29pt
+\title{}
+\date{\today}
+\author{Matthew Gebert}
 
 \begin{document}
-	%heading:
 	\newgeometry{left=3cm, bottom=3cm}
-	\maketitle
-	\begin{flushleft}
-		\hrulefill
-	\end{flushleft}
-	\begin{tabularx}{\textwidth}{Xl}
-		Supervisors:&Michael Fuhrer\\
-		&Semonti Bhattacharyya
-	\end{tabularx}\newline
-	\begin{flushleft}
-		\hrulefill
-	\end{flushleft}
 	
-	\begin{center}
-		Physics Honours, Monash University\\Student ID: 24121843\\
-	\end{center}
-	\vspace{1in}
+	\begin{titlepage}
+%		\maketitle
+		\centering
+		\scshape\LARGE Monash University\\
+		\vspace{5mm}\Large Honours Thesis\\
+		\vspace{2cm}\myTitle Thin oxides in graphene devices\\
+		
+		\vspace{5cm}\normalfont\normalsize
+		\begin{flushleft}
+			\hrulefill
+		\end{flushleft}
+		\begin{tabularx}{\textwidth}{Xl}
+			Supervisors:&Michael Fuhrer\\
+			&Semonti Bhattacharyya
+		\end{tabularx}\newline
+		\begin{flushleft}
+			\hrulefill
+		\end{flushleft}
+		
+		\begin{center}
+			Physics Honours, Monash University\\Student ID: 24121843\\
+		\end{center}
+		\vspace{1in}
+		
+		\begin{center}
+			\large\textbf{Abstract:}
+		\end{center}
+		
+		I present a review of the use of graphene in electronic devices, both in its shortfalls and exciting properties. The electronic structure is detailed, along with various scattering sources that affect electron transport and ultimately the goal of room temperature, electronic devices. Considering heterostructures and the use of other materials to enhance graphene, I discuss the potential use of hafnium dioxide, and other oxides, as an excellent gate dielectric material for potential use in graphene field-effect devices.
 	
-	\begin{center}
-		\large\textbf{Abstract:}
-	\end{center}
+	\end{titlepage}
 	
-	I present a review of the use of graphene in electronic devices, both in its shortfalls and exciting properties. The electronic structure is detailed, along with various scattering sources that affect electron transport and ultimately the goal of room temperature, electronic devices. Considering heterostructures and the use of other materials to enhance graphene, I discuss the potential use of hafnium dioxide, and other oxides, as an excellent gate dielectric material for potential use in graphene field-effect devices.
 	\newpage 
 	\renewcommand{\baselinestretch}{0.94}\normalsize
 	\tableofcontents
 	\renewcommand{\baselinestretch}{1}\normalsize
 	
+	
+	
+	\chapter{Introduction}
+	\subfile{sections/introduction.tex}
+	
+	\chapter{Production of graphene}
+	
+	\chapter{Identification of graphene}
+	
+	\chapter{Characterisation of graphene}
 	
 	
 	
