@@ -1,0 +1,49 @@
+\documentclass[../Matt_Gebert_Honours_Thesis.tex]{subfiles}
+
+%-----------------------PACKAGES-----------------------
+\usepackage{geometry} %Allows changes of margins to document.
+\usepackage{amsmath} %Allows text in equations
+\usepackage{float} %Allows Placement of Images & Tables within pages, not at top etc. ie {table}[H]
+%\usepackage{cite} %You want to refer to a bibtex document? But not needed with natbib.
+\usepackage[super,square]{natbib}%Forces small number citations superscripted.
+%\usepackage[natbibapa]{apacite} For particular citing styles?
+\usepackage[dvipsnames]{xcolor} %Allows custom names and colour designs
+%\usepackage{mathtools}
+%\usepackage{tabularx} %Allows table widths to be set.
+\usepackage[final]{pdfpages} %to insert pdf pages of code.
+\usepackage{hyperref} %Hyperlinking \href{URL}{text}
+\usepackage{cleveref} %Allows text like "Figure" to be automatically generated. "\cref{}" == "Tbl. \ref{}"
+\usepackage{matlab-prettifier} %Matlab Code Inserts
+\usepackage{braket} %Dirac Notations
+\usepackage{rotating} %Allows rotation of an image 
+\usepackage{tabularx} %Allows tables that have multiple lines per cell. https://tex.stackexchange.com/questions/194737/multiline-in-a-table-cell
+\usepackage{dsfont} %Allows symbols like \mathds{1} for identity matrix. 
+\usepackage{caption} %Allows use of subfigure environment with captions inside figure.
+\usepackage{subcaption} %The same as above. https://tex.stackexchange.com/questions/37581
+\usepackage{listings}
+\usepackage{amssymb} %Allows \therefore.
+\usepackage{wrapfig} %Allows wrapping of text around figures. \begin{wrapfigure}[lineheight]{position}{width}
+\usepackage{enumitem} %Allows change of horizontal seperation distances \begin{itemize}[noitemsep,topsep=0pt]
+\usepackage{graphicx} %Enables use of \DeclareGraphicsExtensions command and setting graphics path.
+
+%\usepackage{glossaries} %To make a glossary.  \makeglossaries  \newglossaryentry{latex}{name= , description={}}
+%						\newacronym{gcd}{GCD}{Greatest Common Divisor}
+\usepackage[nottoc,numbib]{tocbibind} %Adds bibliography to TOC.
+\usepackage{subfiles} %Allows a TEX document to be contained within multiple TEX Files.
+
+\begin{document}
+	
+\section{Resistivity Measurements}
+	\subsection{Resistance Measurement}
+	Assuming $R_{load} \gg R_{sample}$ then,
+	\begin{align}
+		I_{in} = \frac{V_{\text{SR830}}}{R_{load} + R_{sample}} \approx\frac{V_{\text{SR830}}}{R_{load}}
+	\end{align}
+	To stay within 1\% of error, we can make sure that $R_load > 100 \times R_{sample}$.
+	
+	Consequently, the resistance of the sample between the voltage probes can be calculated:
+	\begin{align}
+		R_{sample} = \frac{V_{A-B}}{I_{in}} \approx \frac{V_{A} - V_{B}}{V_{\text{SR830}}} R_{load}
+	\end{align}
+	
+\end{document}
