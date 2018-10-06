@@ -102,7 +102,7 @@
 		
 		\myTitle Thin oxides in graphene devices\\
 		\normalfont\normalsize
-		\vspace{5mm}\includegraphics[width=0.5\textwidth]{placeholder.png}
+		\vspace{5mm}\includegraphics[width=0.8\textwidth]{placeholder.png}
 		\vspace{5mm}
 		\begin{flushleft}
 			\hrulefill
@@ -119,20 +119,29 @@
 		\end{center}
 		\vspace{3mm}
 		
-		\begin{center}
-			\large\textbf{Abstract:}
-		\end{center}
-		
-		I present a review of the use of graphene in electronic devices, both in its shortfalls and exciting properties. The electronic structure is detailed, along with various scattering sources that affect electron transport and ultimately the goal of room temperature, electronic devices. Considering heterostructures and the use of other materials to enhance graphene, I discuss the potential use of hafnium dioxide, and other oxides, as an excellent gate dielectric material for potential use in graphene field-effect devices.
+		\newpage 
+		\pagenumbering{gobble}
+		\vspace{1cm}\hspace{1cm}
 	
 	\end{titlepage}
+	\pagenumbering{arabic}
+	\newpage
 	
-	\newpage 
+	
+	\newcommand{\chapterNoNum}[1]{
+		%\par\stepcounter{chapter}%
+		\chapter*{#1}
+		\addcontentsline{toc}{chapter}{#1}
+	}
+	
+	\chapterNoNum{Abstract}
+	I present a review of the use of graphene in electronic devices, both in its shortfalls and exciting properties. The electronic structure is detailed, along with various scattering sources that affect electron transport and ultimately the goal of room temperature, electronic devices. Considering heterostructures and the use of other materials to enhance graphene, I discuss the potential use of hafnium dioxide, and other oxides, as an excellent gate dielectric material for potential use in graphene field-effect devices.
+		
 	\renewcommand{\baselinestretch}{0.94}\normalsize
 	\tableofcontents
 	\renewcommand{\baselinestretch}{1}\normalsize
 	
-	\section{Foreword}
+	\chapterNoNum{Foreword}
 	This thesis serves the purpose presenting the conclusions of my research into thin oxides on graphene. I will be arguing {}, and how that fits into a bigger picture of materials science and particular applications. %INTRO SUMMARY
 	
 	In \cref{chap:introduction}, I will outline what I hope to achieve in this project. I begin by discussing the theoretical properties of graphene and why it has attracted so much interest as an electronic material. I will also describe some challenges facing new computing technologies, including the use of dielectrics, and how my work contributes to realising solutions to new generations of this technology. I will outline a theoretical and experimental summary of the results to date seen in introducing dielectrics to graphene.
@@ -143,6 +152,7 @@
 	
 	In \cref{chap:baregraphene} I will present the data and results from my measurements of the respective devices which will be placed on SiO$_2$. The results to here will be compared alongside data after stamping the same devices with thin oxides in  \cref{chap:thinoxidegraphene}.
 	
+
 	\chapter{Introduction}\label{chap:introduction}
 	\subfile{sections/introduction.tex}
 	
