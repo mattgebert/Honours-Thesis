@@ -22,11 +22,35 @@
 		Photoresists vary in their spinning thickness, but also their exposure rates. Positive photoresists dissolve in developer when exposed to light, while negative photoresists dissolve if not exposed to light. We have only used positive photoresists, as we have primarily been creating structures for deposition, and not etching material (protect your sample, but remove everything else).
 		
 	\subsubsection{HMDS \& AZ-1512}
-		Initially devices were fabricated using the AZ-1512 polymer, with the additional use of hexamethyldisilazane (HMDS) as an adhesion promoter. Devices were spun to 3000 RPM, 
+		Initially devices were fabricated using the AZ-1512 polymer, with the additional use of hexamethyldisilazane (HMDS) as an adhesion promoter between SiO$_2$ and AZ-1512. Devices were spun initially for 10 s at 1000 rpm, before being spun between 2000 and 3000 rpm for 30 s, per resist layer. This leaves a thickness of 1.7 $\mu$m to 1.39 $\mu$m \cite{az1500_series}.
+		Devices were then baked at 100 $^\circ$C for 1 minute.
 	
-	\begin{figure}\label{fig:spin_curve_AZ-1512}
-		\includegraphics[width=0.8\textwidth]{placeholder.png}
-		\caption{}
+	\begin{figure}[H]\label{fig:spin_curve_AZ-1512}
+		\centering
+		\includegraphics[width=0.7\textwidth]{chap2/az1512-spin-curve.png}
+		\caption{Spin curve of AZ-1512 (Source: EMD Performance Materials\cite{az1500_series_spincurve})}
+	\end{figure}
+	
+	\subsubsection{Skin issues with HMDS}
+	When using HMDS and AZ-1512 in conjunction, 
+	
+	
+	\begin{figure}[H]\label{fig:lithography_skins}
+		\centering
+		\begin{subfigure}[b]{0.3\textwidth}
+			\includegraphics[width=\textwidth]{chap2/Litho01_B07_WA1_F10_100x.jpg}
+			\caption{After metal lift off}			
+		\end{subfigure}
+		\begin{subfigure}[b]{0.3\textwidth}
+			\includegraphics[width=\textwidth]{chap2/Litho01_B07_WA1_F10_100x_US1.jpg}
+			\subcaption{after 5s ultrasonication}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.3\textwidth}
+			\includegraphics[width=\textwidth]{chap2/Litho01_B07_WA1_F10_100x_US2.jpg}
+			\subcaption{after 10s ultrasonication}		
+		\end{subfigure}
+		\caption{Material remanants from lithography}
+		%TODO orientate images.
 	\end{figure}
 	
 	\subsubsection{LOR-1A \& AZ-1512}
