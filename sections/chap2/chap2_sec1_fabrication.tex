@@ -1,46 +1,78 @@
 \documentclass[../../Matt_Gebert_Honours_Thesis.tex]{subfiles}
 
 \begin{document}
+	To create graphene devices where we can measure the electronic properties referenced in \cref{sec:fet,sec:electronic_properties}, a variety of steps need to be taken in order to probe electronic flow.
 	
-	To create devices where we can measure the electronic properties referenced in \cref{sec:fet,sec:electronic_properties}, metalic contacts need to be added to the graphene to measure electronic flow through the device. 
+	\begin{figure}[H]
+	\centering
+	\begin{subfigure}{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap2/lithography/01SiliconOxide}
+		\caption{Surface preparation of \silicondioxide}
+	\end{subfigure}
+	\hspace{0.04\textwidth}
+	\begin{subfigure}{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap2/lithography/02graphene}
+		\caption{Exfoliation of graphene on \silicondioxide}
+	\end{subfigure}
+	\hspace{0.04\textwidth}
+	\begin{subfigure}{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap2/lithography/03Photoresist}
+		\caption{Spin coat light sensitive photoresist}
+	\end{subfigure}
+	\hspace{0.04\textwidth}
+	\begin{subfigure}{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap2/lithography/04Exposure}
+		\caption{Masked exposure of photoresist to light}
+	\end{subfigure}
+	\hspace{0.04\textwidth}
+	\begin{subfigure}{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap2/lithography/05Develop}
+		\caption{Develop exposed photoresist}
+	\end{subfigure}
+	\hspace{0.04\textwidth}
+	\begin{subfigure}{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap2/lithography/06Clean}
+		\caption{Lithography structure}
+	\end{subfigure}
+	\hspace{0.04\textwidth}
+	\begin{subfigure}{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{placeholder}
+		\caption{UV Ozone Cleaning}
+	\end{subfigure}
+	\hspace{0.04\textwidth}
+	\begin{subfigure}{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap2/lithography/07Deposition}
+		\caption{Deposition of metals}
+	\end{subfigure}
+	\hspace{0.04\textwidth}
+	\begin{subfigure}{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap2/lithography/07LiftOff}
+		\caption{Lift off: Removal of remaining photoresist and excess metal}
+	\end{subfigure}
+	\hspace{0.04\textwidth}
+	\begin{subfigure}{0.2\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap2/lithography/08Clean}
+		\caption{Final result}
+	\end{subfigure}
+	\caption{Device fabrication process}\label{fig:litho}
+	From exfoliated graphene to a FET.
+	\end{figure}
 	
 	To do this, lithography can be used to create polymer structures that allow the deposition of desired material in 2D geometries. This process and the adjustements made for fabricating our devices are described in the sections below.
 	
 	\subsection{Lithography}\label{sec:lithography}
 	Lithography typically consists of three steps.
 	
-	\begin{figure}[H]
-		\centering
-		\begin{subfigure}{0.3\textwidth}
-			\centering
-%			\includegraphics[width=\textwidth]{chap2/lithography/01SiliconOxide}
-			\includegraphics[width=\textwidth]{chap2/lithography/02graphene}
-			\caption{Exfoliated graphene on \silicondioxide}
-		\end{subfigure}
-		\hspace{0.04\textwidth}
-		\begin{subfigure}{0.28\textwidth}
-			\includegraphics[width=\textwidth]{chap2/lithography/03Photoresist}
-			\centering
-			\caption{Spin coat light sensitive photoresist}
-		\end{subfigure}
-		\hspace{0.04\textwidth}
-		\begin{subfigure}{0.28\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{chap2/lithography/04Exposure}
-			\caption{Masked exposure of photoresist to light}
-		\end{subfigure}
-		\begin{subfigure}{0.28\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{chap2/lithography/05Develop}
-			\caption{Develop exposed photoresist}
-		\end{subfigure}
-		\begin{subfigure}{0.28\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{chap2/lithography/06Clean}
-			\caption{Final lithography result}
-		\end{subfigure}
-		\caption{Lithography}\label{fig:litho}
-	\end{figure}
 	
 	\begin{enumerate}
 		\item Spin coating - covering your sample with a uniform layer of polymer.
@@ -59,7 +91,7 @@
 	
 	\begin{figure}[H]\label{fig:spin_curve_AZ-1512HS}
 		\centering
-		\includegraphics[width=0.7\textwidth]{chap2/az1512-spin-curve.png}
+				\includegraphics[width=0.7\textwidth]{chap2/az1512-spin-curve.png}
 		\caption{Spin curve of AZ-1512HS (Source: EMD Performance Materials\cite{az1500_series_spincurve})}
 	\end{figure}
 	
@@ -69,15 +101,15 @@
 	\begin{figure}[H]
 		\centering
 		\begin{subfigure}[b]{0.3\textwidth}
-			\includegraphics[width=\textwidth]{chap2/skins/Litho01_B07_WA1_F10_100x.jpg}
+						\includegraphics[width=\textwidth]{chap2/skins/Litho01_B07_WA1_F10_100x.jpg}
 			\caption{After metal lift off}			
 		\end{subfigure}
 		\begin{subfigure}[b]{0.3\textwidth}
-			\includegraphics[width=\textwidth]{chap2/skins/1_100x.jpg}
+						\includegraphics[width=\textwidth]{chap2/skins/1_100x.jpg}
 			\subcaption{after 5s ultrasonication}
 		\end{subfigure}
 		\begin{subfigure}[b]{0.3\textwidth}
-			\includegraphics[width=\textwidth]{chap2/skins/2_100x.jpg}
+						\includegraphics[width=\textwidth]{chap2/skins/2_100x.jpg}
 			\subcaption{after 10s ultrasonication}		
 		\end{subfigure}
 		\caption{Material remanants from lithography}\label{fig:lithography_skins}
@@ -92,15 +124,15 @@
 	\begin{figure}[H]
 		\centering
 		\begin{subfigure}[b]{0.3\textwidth}
-			\includegraphics[width=\textwidth]{chap2/US/2_100x.jpg}
+						\includegraphics[width=\textwidth]{chap2/US/2_100x.jpg}
 			\caption{After metal lift off}			
 		\end{subfigure}
 		\begin{subfigure}[b]{0.3\textwidth}
-			\includegraphics[width=\textwidth]{chap2/US/2_100x_after6sAcetoneUS.jpg}
+						\includegraphics[width=\textwidth]{chap2/US/2_100x_after6sAcetoneUS.jpg}
 			\subcaption{after 5s ultrasonication}
 		\end{subfigure}
 		\begin{subfigure}[b]{0.3\textwidth}
-			\includegraphics[width=\textwidth]{chap2/US/2_100x_after10sAcetoneUS.jpg}
+			%			\includegraphics[width=\textwidth]{chap2/US/2_100x_after10sAcetoneUS.jpg}
 			\subcaption{after 10s ultrasonication}		
 		\end{subfigure}
 		\caption{Material remanants from lithography}\label{fig:lithography_skins_us}
@@ -112,7 +144,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.3\textwidth]{placeholder}
+				\includegraphics[width=0.3\textwidth]{placeholder}
 		\caption{Bilayer lithography process}\label{fig:bilayer_lithography}
 	\end{figure}
 	
@@ -125,7 +157,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.3\textwidth]{placeholder}
+				\includegraphics[width=0.3\textwidth]{placeholder}
 		\caption{Developing an exposure array on \silicondioxide}\label{fig:exposure_array}
 	\end{figure}
 	
@@ -144,7 +176,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.3\textwidth]{placeholder}
+				\includegraphics[width=0.3\textwidth]{placeholder}
 		\caption{Cleaning before and after UV Ozone}\label{fig:UV_ozone}
 	\end{figure}
 	
@@ -159,5 +191,5 @@
 	\subsection{Oxide transfer}
 	% Introduction to metal stamping technique. Don't talk about optimisation here.
 	
+	
 \end{document}
-
