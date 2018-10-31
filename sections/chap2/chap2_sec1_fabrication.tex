@@ -40,14 +40,14 @@
 	\hspace{0.04\textwidth}
 	\begin{subfigure}{0.2\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{chap2/lithography/06Clean}
-		\caption{Lithography structure}
+		\includegraphics[width=\textwidth]{chap2/lithography/06UVOzone}
+		\caption{UV Ozone Cleaning}
 	\end{subfigure}
 	\hspace{0.04\textwidth}
 	\begin{subfigure}{0.2\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{placeholder}
-		\caption{UV Ozone Cleaning}
+		\includegraphics[width=\textwidth]{chap2/lithography/06Clean}
+		\caption{After UV Ozone}
 	\end{subfigure}
 	\hspace{0.04\textwidth}
 	\begin{subfigure}{0.2\textwidth}
@@ -74,9 +74,16 @@
 	From exfoliated graphene to a FET.
 	\end{figure}
 	
+	\subsection{Graphene}
+	Since graphene's realisation in 2004 \cite{novoselov_electric_2004}, much research has been focused to finding effecient ways of producing large amounts of graphene \cite{zhang_review_2013}. Originally, the first samples ever created which have primarily been used for sensative measuremnts have been conducted using a method of exfoliation (\cref{sec:exfoliation}). These samples typically exhibit better electronic properties than those produced by other methods.
+	Since 2008/2009, CVD (\cref{sec:CVD}) of carbon to create graphene films has provided another prominent method to produce large films for industrial scale applications. In particular, growth of graphene on copper sheets \cite{li_large-area_2009} has been a reliable way producing these large uniform sheets.
+	
+	There are other methods not used in this thesis, such as epitaxial growth of graphene via SiC uses heating to boil off silicon atoms to form a layer of graphene on it's surface.
+	
 	\subsection{Exfoliation}\label{sec:exfoliation}
-	Exfoliation in materials refers to the cleaving thin layers (or leaves) off a larger sample, and acquiring them onto the substrate. We exfoliate graphene onto Si/SiO$_2$ wafers.
-	Exfoliation can take a variety of forms, from Geim's method \cite{novoselov_two-dimensional_2005}, to directly applying scotch tape to HOPG and then pressing against SiO$_2$, before peeling the tape off. 
+	Exfoliation in materials refers to the cleaving thin layers (or leaves) off a larger sample, and acquiring them onto the substrate. We exfoliate graphene onto Si/SiO$_2$ wafers. 
+	Generally exfoliation involves pressing tape/surfaces against a bulk crystal (such as highly orientated pyrolitic graphite (HOPG), Kish graphite, natural graphite, or graphenium). Due to van der Waals interactions, layers of graphite are transferred to the desired surface. By repeated peeling of the same tape, a thin coverage can be obtained and then transferred onto substrates, such as \silicondioxide.
+	Exfoliation can take a variety of forms, from Geim's method \cite{novoselov_two-dimensional_2005}, to directly applying scotch tape to HOPG and then pressing against SiO$_2$, before peeling the tape off.
 	
 	Huang \etal investigated a reliable method of exfoliation to produce large area and high quality samples \cite{huang_reliable_2015}, which has been widely cited. Tape with graphite flakes is brought into contact with a silicon dioxide wafer, and an annealing process of heating the tape and wafer for 2-5m at $\sim 100^\circ$C on a conventional lab hot plate is used. After allowing cooling to room temperature, the tape is removed. They find under optical microscopy that graphene flakes with uniform thickness routinely range from $\sim 20\mu$m to above $100\mu$m. In this context, annealing is expected to increase traction due to the remove of gas moelcules trapped between SiO$_2$ and graphite.\newline 
 	
@@ -120,7 +127,7 @@
 		\caption{Spin curve of AZ-1512HS (Source: EMD Performance Materials\cite{az1500_series_spincurve})}
 	\end{figure}
 	
-	\paragraph{Skin issues with HMDS}\label{sec:sin_issues}
+	\paragraph{Skin issues with HMDS}\label{sec:skin_issues}
 	When using HMDS and AZ-1512HSHS in conjunction, significant amounts of deposition remenants were found on samples as seen in \cref{fig:lithography_skins}.
 	
 	\begin{figure}[H]
@@ -141,9 +148,94 @@
 		%TODO orientate images, and update examples.
 	\end{figure}
 	
-	This is likely due to metal deposition (ie, Chromium, see \cref{sec:deposition}) forming layers on the sides of lithography wells, as the skins have very similar geometry to that of either the wells or the edges. The spinning speeds give resist heights (ie, the well edge heights) roughly the same as feature width ($\approx$1$\mu$m minimum), matching the observed result.
+	This is likely due to metal deposition (ie, Chromium, see \cref{sec:deposition}) forming layers on the sides of lithography wells, as the skins have very similar geometry to that of either the wells or the edges. The spinning speeds give resist heights (ie, the well edge heights) roughly the same as feature width ($\approx$1$\mu$m minimum), matching the observed result. 
 	
-	Sometimes these remenants could be cleaned off, through the use of ultrasonication, however this had a large risk of damaging the graphene, seen in \cref{fig:lithography_skins_break}.
+	Ultrasonication (see \cref{sec:ultrasonication}) can be used to attempt to remove edges after lift off, however there is risk of damaging samples of graphene.
+	
+	\paragraph{LOR-1A \& AZ-1512HS}
+	The issue with a single layer photoresist processes, outlined above, is that well edges allow deposited materials to adhere, leaving 'skins'. One way to prevent this from happening is to use a multilayer process. Two resist layers are spun onto the sample, with the bottom film being more sensitive to the lithography process than the top (ie, develops faster, or is more sensitive to exposure). When developed, the bottom layer \textit{undercuts} the top layer, stopping adhesion to edges of the well when material is deposited. This process is depicted in \cref{fig:bilayer_lithography}.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\textwidth]{chap2/bilayerResist.jpeg}
+		\caption{Bilayer lithography process (Source: Park \etal\cite{park_bilayer_2008}) }\label{fig:bilayer_lithography}
+	\end{figure}
+	
+	LOR-1A is an actinic lift off resist, responding to UV light from 240 nm to 290 nm \cite{microchem_lor1a}. When the resist films are exposed to the developer, LOR-1A is removed below an overhanging AZ1512-HS layer due to additional development, leaving the desired undercut effect.
+	
+	\subsubsection{Exposure}\label{sec:exposure}
+	After spinning, a mask writer tool is used to expose the wafer and resist films to UV light. A mask writer is composed of a mask, or a DMD (digital micro-mirror device) which allows filtering of pixel like squares, based on an imput image. Actinic reactions occur from the UV light with the photoresist, forming desired pad structures in the resist. Prepared CAD files are used to generate masks used by the DMD as seen in \cref{fig:DMD_mask}.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{chap2/DMD_mask}
+		\caption{DMD masks created using Autocad\texttrademark.}\label{fig:DMD_mask} Additional structures are created to help position the mask when using a 20x lens, as graphene can be difficult to see in a mask writer tool.
+	\end{figure}
+	
+	An important parameter in the mask writing process is the exposure time, which affects the ability to develop fine structures. By using an array of different exposure times (\cref{fig:exposure_array}), the optimal feature result was found for a typical developing time.
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}{0.45\textwidth}
+			\includegraphics[width=\textwidth]{chap2/array/array1}
+			\caption{Feature array 5x}
+		\end{subfigure}
+		\begin{subfigure}{0.45\textwidth}
+			\includegraphics[width=\textwidth]{chap2/array/array2}
+			\caption{Feature array 100x}
+		\end{subfigure}
+		\caption{Developing an exposure array on \silicondioxide}\label{fig:exposure_array}
+	\end{figure}
+	
+	\subsubsection{Developers}\label{sec:developer}
+	Developers are used to dissolve exposed / unexposed areas of photoresist films. We use AZ-726 in conjunction with AZ-1512HS. Using a development time complementary to the exposure time is important to not overdevelop features, as material in proximity to exposed areas is at risk of some structural damage, and developers continue to react with the remaining structure over time.
+	
+	\subsection{UV Ozone surface preparation}\label{sec:uv_ozone}
+	%TODO Cite papers here.
+	Large resistances can occur when trying to make contact with graphene. This can be for a variety of reasons. Resist residues between the deposited pads and graphene can be insulating, perhaps non-metalic bonding occurs between deposited metals and graphene, or the oxidisation of metals being deposited (ie, chromium oxide) could occur.
+	
+	Serveral studies by Li \etal\cite{li_ultraviolet/ozone_2013} and Nath \etal\cite{nath_achieving_2014,nath_search_2016} have shown the ability to reduce contact resistance of graphene by using UV ozone treatement, to less than 200 $\Omega$, a small contact resistance.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{chap2/uvozone/UVOzone}
+		\caption{Cleaning of graphene using UV Ozone (Source: Li \etal. \cite{li_ultraviolet/ozone_2013})}\label{fig:UV_ozone} (a) Before transfer (b) After photolithography  (c)$\to$(f) UVO treatment for 5, 10, 16, 22 min, respectively. Scale bar: 1$\mu$m.
+	\end{figure}
+	
+	UV Ozone treatment refers to the use of UV light to generate photochemical reactions on sample surfaces. $185$nm light is used to generate ozone O$_3$ from bonding molecular (O$_2$) oxygen, while $254$nm light is used to dissociate ozone to molecular and singlet oxygen (O$_1$), the latter of which is reactive with substrate surfaces. Increasing stage temperature also will increase the etching rate that occurs. UV Ozone is used in this context to clean the graphene exposed in our developed wells, as seen in \cref{fig:UV_ozone}.
+	
+	\begin{wrapfigure}[13]{r}[0pt]{5.5cm}
+		\vspace{-0.5cm}
+		\centering
+		\includegraphics[width=0.32\textwidth]{chap2/deposition}
+		\caption{E-beam Evaporation (Source: \cite{noauthor_understanding_nodate})}\label{fig:ebeamevap}
+	\end{wrapfigure}
+	
+	To determine an appropriate etching time for the particular tool used, two wafers with grapehe flakes at times of 5m and 15m were cleaned using UV Ozone. The 15m devices were etched away completely, however the 5m device provided the first low resistance contact observed, after many iterations of devices.
+	
+	
+	\subsection{Deposition}\label{sec:deposition}
+
+	Once a designed structure is built to make contacts with graphene and cleaned using UV Ozone, material can now be deposited onto the device. There are many different methods, including sputtering and thermal evaporation, however electron beam evaporation (\cref{fig:ebeamevap}) was used for these devices, due to its uniformity, control of deposition rate, and the availability of various material crucibles.
+	
+	50nm of Au (Gold) was originally deposited with a Cr (Chromium) adhesion layer of 5nm to promote contact to SiO$_2$, however issues with metallic contact to graphene arose. In case of chromium oxidisation during deposition, creating an insulating layer to graphene, a thinner layer (2nm) of chromium was instead deposited. This is reasonable as pinhole effects resulting from a thin deposited Cr layer do not affect bulk transport.
+	
+	\subsubsection{Oxide Protection}\label{sec:deposition_oxide_protection}
+	
+	\begin{wrapfigure}[13]{r}[0pt]{5.5cm}
+		\vspace{-1cm}
+		\centering
+		\includegraphics[width=0.32\textwidth]{chap2/liftoff}
+		\caption{PG Remover liftoff}\label{fig:liftoff}
+	\end{wrapfigure}
+
+	In using metal liquids to cover devices with oxides, the gold reacted strongly to the liquid metallic environment, destroying pre-established pads. This is further described in \cref{chap:thinoxides}, however the result was to use additional layers, another layer of Cr 2nm and a layer of SiO$_2$ 20nm. These additional layers do not prevent contact through contact probes and provide insulation from the bulk of metal liquid reactions.
+	
+	\subsection{Lift-off}\label{sec:liftoff}
+	To remove the remaining gold covered photoresist on the substrate, a solvent called PG remover is used to emerse samples at 80 $^\circ$C. Using a pipette to generate soft fluid flow around the device, the excess gold is slowly removed. 
+	
+	\subsubsection{Ultrasonication}\label{sec:ultrasonication}
+	After lift off, the presence of skin remenants (described in \cref{sec:skin_issues}) could sometimes be cleaned off through the use of ultrasonication (\cref{fig:lithography_skins_us}), however this had a large risk of damaging the graphene, seen in \cref{fig:lithography_skins_break}.
 	
 	\begin{figure}[H]
 		\centering
@@ -161,7 +253,7 @@
 		\end{subfigure}
 		\caption{Ultrasonication used to remove material remanants from lithography.}\label{fig:lithography_skins_us}Note the movement or loss of gold material on the middle probes.
 	\end{figure}
-
+	
 	\begin{figure}[H]
 		\centering
 		\begin{subfigure}[b]{0.3\textwidth}
@@ -178,58 +270,11 @@
 		\end{subfigure}
 		\caption{Ultrasonication that has broken graphene sample.}\label{fig:lithography_skins_break}
 	\end{figure}
-	
-	\paragraph{LOR-1A \& AZ-1512HS}
-	An issue with a single layer photoresist processes is that well edges allow deposited materials to adhere, leaving 'skins'. One way to prevent this from happening is to use a multilayer process. Two resist layers are spun onto the sample, with the bottom film being more sensitive to the lithography process than the top (ie, develops faster, or is more sensitive to exposure). When developed, the bottom layer \textit{undercuts} the top layer, stopping adhesion to edges of the well when material is deposited. This process is depicted in \cref{fig:bilayer_lithography}.
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.5\textwidth]{chap2/bilayerResist.jpeg}
-		\caption{Bilayer lithography process (Source: Park \etal\cite{park_bilayer_2008}) }\label{fig:bilayer_lithography}
-	\end{figure}
-	
-	Rather than a photoresist, LOR-1A is a lift off resist. When the films are exposed to the developer, LOR-1A is also lifted off with the soluble AZ-1512HS. Additional material is pulled and dissolved from the well, leaving the desired undercut effect. %TODO CHECK HOW IT REALLY WORKS.
-	
-	\subsubsection{Exposure}\label{sec:exposure}
-	After spinning, a mask writer tool is used to expose the wafer and resist films to UV light to develop desired pads. A mask writer usually is composed of a DMA (Digital Mirror Array) which allows filtering to pixel like squares. %TODO CHECK DMA
-	
-	An important parameter played with in this process is the exposure time, which affects your ability to develop fine structures. By using an array of different exposure times (\cref{fig:exposure_array}), we were able to optimise our feature exposure for a typical developing time.
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.3\textwidth]{placeholder}
-		\caption{Developing an exposure array on \silicondioxide}\label{fig:exposure_array}
-	\end{figure}
-	
-	Prepared CAD files, that specify the structure for desired contact pads onto devices, are used by the DMA to iteratevly expose small areas of the film. These exposed areas undergo a chemical change, changing the structural properties for development.
-	
-	\subsubsection{Developers}\label{sec:developer}
-	Developers are used to dissolve exposed / unexposed areas of photoresist films. For example, we use AZ-726 in conjunction with AZ-1512HS. Using a development time complementary to your exposure time is important to not overdevelop your features, as material in prodximity to exposed areas is at risk of some structural damage. Developers do still affect the remaining structure over time.
-	
-	\subsection{UV Ozone surface preparation}\label{sec:uv_ozone}
-	%TODO Cite papers here.
-	Large resistances can occur when trying to make contact with graphene. This can be for a variety of reasons. Resist residues between the deposited pads and graphene can be insulating, non-metalic bonding between deposited metals and graphene, or oxidisation of metals being deposited (ie, chromium oxide).
-	
-	We use UV Ozone to clean the graphene exposed in our developed wells. UV Ozone cleaning blasts the surface with UV ozone light, while flowing oxygen gas. Overtime surfaces are slowly etched and material that is not strongly bonded is cleared. 
-	
-	In our optimisation we ran two wafers with devices at times of 5m and 15m respectively (see \cref{fig:UV_ozone}). The 15m devices were etched away completely, however the 5m device provided the first low resistance contact observed, after many iterations of devices.
-	
-	\begin{figure}[H]
-		\centering
-				\includegraphics[width=0.3\textwidth]{placeholder}
-		\caption{Cleaning before and after UV Ozone}\label{fig:UV_ozone}
-	\end{figure}
-	
-	\subsection{Deposition}\label{sec:deposition}
-	Once a designed structure is exposed to make contacts with graphene, 
-	
-	\subsubsection{Oxide Protection}\label{sec:deposition_oxide_protection}
-	
-	\subsection{Lift-off}\label{}
-	\subsubsection{Ultrasonication}
-	
-	\subsection{Oxide transfer}
+
+	\subsection{Oxide stamping}
 	% Introduction to metal stamping technique. Don't talk about optimisation here.
+	Zavabeti \etals\cite{zavabeti_liquid_2017} work on thin oxides synthesised by liquid metal introduces two methods to create such oxides. The first involves the exfoliation of oxide layers from the surface of metal droplets, and the second involves the suspension of oxide layers in water, created by injecting gas through the metal liquid. This section will only describe the former in detail, which is used in this project. Refer to \cref{chap:thinoxides} for further optimisation and exploration of the liquid metal technique.
+	
 	
 	
 \end{document}
