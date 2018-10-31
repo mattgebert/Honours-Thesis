@@ -1,7 +1,7 @@
 \documentclass[../../Matt_Gebert_Honours_Thesis.tex]{subfiles}
 
 \begin{document}
-	To create graphene devices where we can measure the electronic properties referenced in \cref{sec:fet,sec:electronic_properties}, a variety of steps need to be taken in order to probe electronic flow.
+	To create graphene devices where we can measure the electronic properties referenced in \cref{sec:fet,sec:electronic_properties}, a variety of steps need to be taken in order to probe electronic flow. \Cref{fig:litho} describes the general process for exfoliated graphene (see \cref{sec:exfoliation}), the bulk of the devices.
 	
 	\begin{figure}[H]
 	\centering
@@ -70,8 +70,7 @@
 		\includegraphics[width=\textwidth]{chap2/lithography/08Clean}
 		\caption{Final result}
 	\end{subfigure}
-	\caption{Device fabrication process}\label{fig:litho}
-	From exfoliated graphene to a FET.
+	\caption[Device fabrication process]{Device fabrication process from exfoliated graphene to a FET device.}\label{fig:litho}
 	\end{figure}
 	
 	\subsection{Graphene}
@@ -80,7 +79,23 @@
 	
 	There are other methods not used in this thesis, such as epitaxial growth of graphene via SiC uses heating to boil off silicon atoms to form a layer of graphene on it's surface.
 	
-	\subsection{Exfoliation}\label{sec:exfoliation}
+	\subsection{Chemical vapor deposition graphene}\label{sec:CVD}
+	Graphene can be growth via chemical vapor deposition, resulting in particularly large uniform sheets when grown on copper \cite{li_large-area_2009}. This is a widely used method of producing readily available graphene. Graphene produced in this fashion needs to be transfered onto an insulating layer of oxide to create a gate, or be gated by using a deposition method. We have used the former, which will introduce some cracks, folding and wrinkling disorder when transfered.
+	
+	\begin{wrapfigure}[17]{r}[0pt]{8cm}
+		\centering
+		\vspace{-0.5cm}
+		\includegraphics[width=0.5\textwidth]{chap2/cvd_graphene}
+		\caption[CVD graphene grown on Cu transferred onto \silicondioxide{} and Au pads.]{CVD graphene grown on Cu transferred onto \silicondioxide{} and Au pads. The contrast differences due to the autoexposure of the camera software.} \label{fig:cvd_grpahene} 
+	\end{wrapfigure}
+
+	To achieve this, a process\cite{zheng_direct_2017} using polymethyl methacrylate (PMMA) is used to 'wet transfer' CVD graphene onto a \silicondioxide{} wafer with pre-deposited Au pads, from a masked e-beam deposition (see \cref{sec:deposition}). 
+	
+	Copper grown CVD graphene, covered by PMMA, is placed in an ammonium persulfate solution, dissolving the copper. The remaining graphene and PMMA remains hydrophobic on the surface, and allows substrates to collect the sample beneath. After the transfer is complete, the sample is soaked in PG remover to clean off PMMA. An example device is shown in \cref{fig:cvd_grpahene}. 
+	
+	We seldom used this technique to produce graphene devices due to the area coverage requirement of an oxide as well as the lack of goemetric definition.
+	
+	\subsection{Exfoliation of graphene}\label{sec:exfoliation}
 	Exfoliation in materials refers to the cleaving thin layers (or leaves) off a larger sample, and acquiring them onto the substrate. We exfoliate graphene onto Si/SiO$_2$ wafers. 
 	Generally exfoliation involves pressing tape/surfaces against a bulk crystal (such as highly orientated pyrolitic graphite (HOPG), Kish graphite, natural graphite, or graphenium). Due to van der Waals interactions, layers of graphite are transferred to the desired surface. By repeated peeling of the same tape, a thin coverage can be obtained and then transferred onto substrates, such as \silicondioxide.
 	Exfoliation can take a variety of forms, from Geim's method \cite{novoselov_two-dimensional_2005}, to directly applying scotch tape to HOPG and then pressing against SiO$_2$, before peeling the tape off.
@@ -124,7 +139,7 @@
 	\begin{figure}[H]\label{fig:spin_curve_AZ-1512HS}
 		\centering
 		\includegraphics[width=0.7\textwidth]{chap2/az1512-spin-curve.png}
-		\caption{Spin curve of AZ-1512HS (Source: EMD Performance Materials\cite{az1500_series_spincurve})}
+		\caption[Spin curve of AZ-1512HS]{Spin curve of AZ-1512HS (Source: EMD Performance Materials\cite{az1500_series_spincurve})}
 	\end{figure}
 	
 	\paragraph{Skin issues with HMDS}\label{sec:skin_issues}
@@ -144,8 +159,7 @@
 			\includegraphics[width=\textwidth]{chap2/skins/2_100x_v2.jpg}
 %			\subcaption{after 10s ultrasonication}		
 		\end{subfigure}
-		\caption{Material remanants from lithography. Gold edges exhibit a bluish remnant edge.}\label{fig:lithography_skins}
-		%TODO orientate images, and update examples.
+		\caption[Material remanants from lithography]{Material remanants from lithography. Gold edges exhibit a bluish remnant edge.}\label{fig:lithography_skins}
 	\end{figure}
 	
 	This is likely due to metal deposition (ie, Chromium, see \cref{sec:deposition}) forming layers on the sides of lithography wells, as the skins have very similar geometry to that of either the wells or the edges. The spinning speeds give resist heights (ie, the well edge heights) roughly the same as feature width ($\approx$1$\mu$m minimum), matching the observed result. 
@@ -158,7 +172,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.5\textwidth]{chap2/bilayerResist.jpeg}
-		\caption{Bilayer lithography process (Source: Park \etal\cite{park_bilayer_2008}) }\label{fig:bilayer_lithography}
+		\caption[Bilayer lithography process]{Bilayer lithography process (Source: Park \etal\cite{park_bilayer_2008}) }\label{fig:bilayer_lithography}
 	\end{figure}
 	
 	LOR-1A is an actinic lift off resist, responding to UV light from 240 nm to 290 nm \cite{microchem_lor1a}. When the resist films are exposed to the developer, LOR-1A is removed below an overhanging AZ1512-HS layer due to additional development, leaving the desired undercut effect.
@@ -166,10 +180,18 @@
 	\subsubsection{Exposure}\label{sec:exposure}
 	After spinning, a mask writer tool is used to expose the wafer and resist films to UV light. A mask writer is composed of a mask, or a DMD (digital micro-mirror device) which allows filtering of pixel like squares, based on an imput image. Actinic reactions occur from the UV light with the photoresist, forming desired pad structures in the resist. Prepared CAD files are used to generate masks used by the DMD as seen in \cref{fig:DMD_mask}.
 	
-	\begin{figure}[H]
+	\begin{figure}
 		\centering
-		\includegraphics[width=\textwidth]{chap2/DMD_mask}
-		\caption{DMD masks created using Autocad\texttrademark.}\label{fig:DMD_mask} Additional structures are created to help position the mask when using a 20x lens, as graphene can be difficult to see in a mask writer tool.
+		\begin{subfigure}{0.65\textwidth}
+			\includegraphics[width=\textwidth]{chap2/DMD_mask}
+			\caption[DMD masks created using Autocad\texttrademark.]{DMD masks created using Autocad\texttrademark. Additional structures are created to help position the mask when using a 20x lens, as graphene can be difficult to see in a mask writer tool.}
+		\end{subfigure}
+		\hspace{0.02\textwidth}
+		\begin{subfigure}{0.3\textwidth}
+			\includegraphics[width=\textwidth]{chap2/mask}
+			\caption[Photolithography structure]{Photolithography structure from mask writing and development.}
+		\end{subfigure}
+		\caption{Photolithography mask writing}\label{fig:DMD_mask}
 	\end{figure}
 	
 	An important parameter in the mask writing process is the exposure time, which affects the ability to develop fine structures. By using an array of different exposure times (\cref{fig:exposure_array}), the optimal feature result was found for a typical developing time.
@@ -275,6 +297,13 @@
 	% Introduction to metal stamping technique. Don't talk about optimisation here.
 	Zavabeti \etals\cite{zavabeti_liquid_2017} work on thin oxides synthesised by liquid metal introduces two methods to create such oxides. The first involves the exfoliation of oxide layers from the surface of metal droplets, and the second involves the suspension of oxide layers in water, created by injecting gas through the metal liquid. This section will only describe the former in detail, which is used in this project. Refer to \cref{chap:thinoxides} for further optimisation and exploration of the liquid metal technique.
 	
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth]{chap2/liq_metal_exfol}
+		\caption{Process of liquid metal oxide exfoliation (source: Zavabeti \etal{}\cite{zavabeti_liquid_2017})}\label{fig:liq_metal_exfoliation}
+	\end{figure}	
 	
+	A eutectic gallium melt is made by combining elements such as gallium, indium and tin. At room temperature these alloys are metallic liquids, and form atomically thin oxides on their surfaces. Because the formation of oxides change the Gibbs free energy of the system, those that provide the greatest reduction dominate the surface\cite{zavabeti_liquid_2017}. After the melt is formed and exposed to oxygen for some time, the oxide is isolated by a van der Waals exfoliation technique, touching the liquid metal droplet to the solid substrate, as seen in \cref{fig:liq_metal_exfoliation}.
+	
+	For the primary example of creating \aluminimumoxide, aluminium pieces are cleaned using a tissue, before being cut up into a few mm long segments. After heating a gallium based melt into a liquid inside a glovebox with roughly 0.2-0.3\% oxygen, the gallium and aluminium are ground together using a mortar and pestle. 
 	
 \end{document}

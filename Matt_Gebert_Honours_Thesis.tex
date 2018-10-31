@@ -45,8 +45,8 @@
 \definecolor{lightgrey}{RGB}{200,200,200}
 \newcommand{\code}[1]{\colorbox{lightgray}{\lstinline[basicstyle=\ttfamily\color{black}]|#1|}}
 %Code to add \textit{et al} text.
-\newcommand{\etal}{\textit{et al }}
-\newcommand{\etals}{\textit{et al's}}
+\newcommand{\etal}[1]{\textit{et al}#1}
+\newcommand{\etals}[1]{\textit{et al's}#1}
 %Tensor product symbol
 \newcommand{\tens}{\mathbin{\mathop{\otimes}}} 
 %Trace text in equations:
@@ -56,10 +56,10 @@
 \newcommand{\lsim}{\lesssim}
 
 %Materials:
-\newcommand{\silicondioxide}{SiO$_2$}
-\newcommand{\aluminimumoxide}{AlO$_3$}
-\newcommand{\galliumoxide}{GaO$_3$}
-\newcommand{\tinoxide}{SnO}
+\newcommand{\silicondioxide}[1]{SiO$_2$#1}
+\newcommand{\aluminimumoxide}[1]{AlO$_3$#1}
+\newcommand{\galliumoxide}[1]{GaO$_3$#1}
+\newcommand{\tinoxide}[1]{SnO}
 
 
 %-----------------------DOCUMENT SETUP-----------------------

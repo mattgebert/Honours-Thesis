@@ -1,16 +1,18 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Device fabrication process\relax }}{8}{figure.caption.13}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Spin curve of AZ-1512HS (Source: EMD Performance Materials\cite {az1500_series_spincurve})\relax }}{10}{figure.caption.16}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Material remanants from lithography. Gold edges exhibit a bluish remnant edge.\relax }}{10}{figure.caption.18}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Bilayer lithography process (Source: Park \textit {et al }\cite {park_bilayer_2008}) \relax }}{11}{figure.caption.20}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces DMD masks created using Autocad\texttrademark .\relax }}{11}{figure.caption.22}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Developing an exposure array on SiO$_2$\relax }}{12}{figure.caption.23}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Cleaning of graphene using UV Ozone (Source: Li \textit {et al }. \cite {li_ultraviolet/ozone_2013})\relax }}{12}{figure.caption.25}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces E-beam Evaporation (Source: \cite {noauthor_understanding_nodate})\relax }}{13}{figure.caption.26}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces PG Remover liftoff\relax }}{13}{figure.caption.28}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Ultrasonication used to remove material remanants from lithography.\relax }}{14}{figure.caption.30}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Ultrasonication that has broken graphene sample.\relax }}{14}{figure.caption.31}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Device fabrication process}}{8}{figure.caption.13}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces CVD graphene grown on Cu transferred onto SiO$_2$ and Au pads.}}{8}{figure.caption.14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Spin curve of AZ-1512HS}}{10}{figure.caption.17}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Material remanants from lithography}}{10}{figure.caption.19}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Bilayer lithography process}}{11}{figure.caption.21}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Photolithography mask writing\relax }}{12}{figure.caption.23}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Developing an exposure array on SiO$_2$\relax }}{12}{figure.caption.24}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Cleaning of graphene using UV Ozone (Source: Li \textit {et al}. \cite {li_ultraviolet/ozone_2013})\relax }}{13}{figure.caption.26}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces E-beam Evaporation (Source: \cite {noauthor_understanding_nodate})\relax }}{13}{figure.caption.27}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces PG Remover liftoff\relax }}{14}{figure.caption.29}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Ultrasonication used to remove material remanants from lithography.\relax }}{14}{figure.caption.31}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Ultrasonication that has broken graphene sample.\relax }}{14}{figure.caption.32}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Process of liquid metal oxide exfoliation (source: Zavabeti \textit {et al}\cite {zavabeti_liquid_2017})\relax }}{15}{figure.caption.33}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
