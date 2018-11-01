@@ -18,7 +18,7 @@
 \usepackage{rotating} %Allows rotation of an image 
 \usepackage{tabularx} %Allows tables that have multiple lines per cell. https://tex.stackexchange.com/questions/194737/multiline-in-a-table-cell
 \usepackage{dsfont} %Allows symbols like \mathds{1} for identity matrix. 
-\usepackage{caption} %Allows use of subfigure environment with captions inside figure.
+\usepackage[justification=centering]{caption} %Allows use of subfigure environment with captions inside figure. Justification centering means multiline captions will be centred
 \usepackage{subcaption} %The same as above. https://tex.stackexchange.com/questions/37581
 \usepackage{listings}
 \usepackage{amssymb} %Allows \therefore.
@@ -26,6 +26,7 @@
 \usepackage{enumitem} %Allows change of horizontal seperation distances \begin{itemize}[noitemsep,topsep=0pt]
 \usepackage{graphicx} %Enables use of \DeclareGraphicsExtensions command and setting graphics path.
 \usepackage[toc,page]{appendix}%Allows the use of chapters within a \begin{appendices} environment.
+\usepackage{multirow} %Allows the placement of multirow images in the figure environment. https://tex.stackexchange.com/a/394954/137109
 
 %\usepackage{glossaries} %To make a glossary.  \makeglossaries  \newglossaryentry{latex}{name= , description={}}
 %						\newacronym{gcd}{GCD}{Greatest Common Divisor}

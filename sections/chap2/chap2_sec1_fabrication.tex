@@ -70,17 +70,17 @@
 		\includegraphics[width=\textwidth]{chap2/lithography/08Clean}
 		\caption{Final result}
 	\end{subfigure}
-	\caption[Device fabrication process]{Device fabrication process from exfoliated graphene to a FET device.}\label{fig:litho}
+	\caption[Process diagram for device fabrication]{Device fabrication process from exfoliated graphene to a FET device.}\label{fig:litho}
 	\end{figure}
 	
 	\subsection{Graphene}
-	Since graphene's realisation in 2004 \cite{novoselov_electric_2004}, much research has been focused to finding effecient ways of producing large amounts of graphene \cite{zhang_review_2013}. Originally, the first samples ever created which have primarily been used for sensative measuremnts have been conducted using a method of exfoliation (\cref{sec:exfoliation}). These samples typically exhibit better electronic properties than those produced by other methods.
+	Since the realisation of graphene in 2004 \cite{novoselov_electric_2004}, much research has been focused to finding efficient ways of producing large amounts of graphene \cite{zhang_review_2013}. Originally, the first samples ever created which have primarily been used for sensitive measurements have been conducted using a method of exfoliation (\cref{sec:exfoliation}). These samples typically exhibit better electronic properties than those produced by other methods.
 	Since 2008/2009, CVD (\cref{sec:CVD}) of carbon to create graphene films has provided another prominent method to produce large films for industrial scale applications. In particular, growth of graphene on copper sheets \cite{li_large-area_2009} has been a reliable way producing these large uniform sheets.
 	
 	There are other methods not used in this thesis, such as epitaxial growth of graphene via SiC uses heating to boil off silicon atoms to form a layer of graphene on it's surface.
 	
-	\subsection{Chemical vapor deposition graphene}\label{sec:CVD}
-	Graphene can be growth via chemical vapor deposition, resulting in particularly large uniform sheets when grown on copper \cite{li_large-area_2009}. This is a widely used method of producing readily available graphene. Graphene produced in this fashion needs to be transfered onto an insulating layer of oxide to create a gate, or be gated by using a deposition method. We have used the former, which will introduce some cracks, folding and wrinkling disorder when transfered.
+	\subsection{Chemical vapour deposition graphene}\label{sec:CVD}
+	Graphene can be growth via chemical vapour deposition, resulting in particularly large uniform sheets when grown on copper \cite{li_large-area_2009}. This is a widely used method of producing readily available graphene. Graphene produced in this fashion needs to be transferred onto an insulating layer of oxide to create a gate, or be gated by using a deposition method. We have used the former, which will introduce some cracks, folding and wrinkling disorder when transferred.
 	
 	\begin{wrapfigure}[17]{r}[0pt]{8cm}
 		\centering
@@ -93,14 +93,14 @@
 	
 	Copper grown CVD graphene, covered by PMMA, is placed in an ammonium persulfate solution, dissolving the copper. The remaining graphene and PMMA remains hydrophobic on the surface, and allows substrates to collect the sample beneath. After the transfer is complete, the sample is soaked in PG remover to clean off PMMA. An example device is shown in \cref{fig:cvd_grpahene}. 
 	
-	We seldom used this technique to produce graphene devices due to the area coverage requirement of an oxide as well as the lack of goemetric definition.
+	We seldom used this technique to produce graphene devices due to the area coverage requirement of an oxide as well as the lack of geometric definition.
 	
 	\subsection{Exfoliation of graphene}\label{sec:exfoliation}
 	Exfoliation in materials refers to the cleaving thin layers (or leaves) off a larger sample, and acquiring them onto the substrate. We exfoliate graphene onto Si/SiO$_2$ wafers. 
-	Generally exfoliation involves pressing tape/surfaces against a bulk crystal (such as highly orientated pyrolitic graphite (HOPG), Kish graphite, natural graphite, or graphenium). Due to van der Waals interactions, layers of graphite are transferred to the desired surface. By repeated peeling of the same tape, a thin coverage can be obtained and then transferred onto substrates, such as \silicondioxide.
+	Generally exfoliation involves pressing tape/surfaces against a bulk crystal (such as highly orientated pyrolytic graphite (HOPG), Kish graphite, natural graphite, or graphenium). Due to van der Waals interactions, layers of graphite are transferred to the desired surface. By repeated peeling of the same tape, a thin coverage can be obtained and then transferred onto substrates, such as \silicondioxide.
 	Exfoliation can take a variety of forms, from Geim's method \cite{novoselov_two-dimensional_2005}, to directly applying scotch tape to HOPG and then pressing against SiO$_2$, before peeling the tape off.
 	
-	Huang \etal investigated a reliable method of exfoliation to produce large area and high quality samples \cite{huang_reliable_2015}, which has been widely cited. Tape with graphite flakes is brought into contact with a silicon dioxide wafer, and an annealing process of heating the tape and wafer for 2-5m at $\sim 100^\circ$C on a conventional lab hot plate is used. After allowing cooling to room temperature, the tape is removed. They find under optical microscopy that graphene flakes with uniform thickness routinely range from $\sim 20\mu$m to above $100\mu$m. In this context, annealing is expected to increase traction due to the remove of gas moelcules trapped between SiO$_2$ and graphite.\newline 
+	Huang \etal investigated a reliable method of exfoliation to produce large area and high quality samples \cite{huang_reliable_2015}, which has been widely cited. Tape with graphite flakes is brought into contact with a silicon dioxide wafer, and an annealing process of heating the tape and wafer for 2-5m at $\sim 100^\circ$C on a conventional lab hot plate is used. After allowing cooling to room temperature, the tape is removed. They find under optical microscopy that graphene flakes with uniform thickness routinely range from $\sim 20\mu$m to above $100\mu$m. In this context, annealing is expected to increase traction due to the remove of gas molecules trapped between SiO$_2$ and graphite.\newline 
 	
 	The following steps make up the process of exfoliation we optimised:
 	\begin{enumerate}
@@ -116,15 +116,17 @@
 	
 	We found success can depend on HOPG crystal, given we tried cleavage using ZYA and ZYB quality crystals and had repeated failure. Changing to a new ZYA crystal provided immediate results using the same process.
 	
+	After exfoliation, graphene was identified under a 20x microscope lens, raster scanning across wafers to identify any samples big enough. Typically to make a device using photolithography, a sample of graphene required a minimum 8$\mu$m in dimensional length to be useful.
+	
 	\subsection{Lithography}\label{sec:lithography}
-	Lithography can be used to create polymer structures that allow the deposition of desired material in 2D geometries. This is used to create electrical contacts onto graphene. This process and the adjustements made for fabricating our devices are described in this section.\newline
+	Lithography can be used to create polymer structures that allow the deposition of desired material in 2D geometries. This is used to create electrical contacts onto graphene. This process and the adjustments made for fabricating our devices are described in this section.\newline
 	
 	Lithography typically consists of three main steps.
 	\begin{enumerate}
 		\itemsep0em
 		\item Spin coating - covering a sample with a uniform layer of polymer, and baking it on.
 		\item Exposure - The polymer undergoes chemical changes to its properties when exposed to particular wavelengths of light. This differentiates exposed areas to those unexposed.
-		\item Developer solution - developer solution removes indended areas of photoresist to create structures.
+		\item Developer solution - developer solution removes intended areas of photoresist to create structures.
 	\end{enumerate}
 	
 	\subsubsection{Spin coating photoresists}\label{sec:resists}
@@ -159,15 +161,15 @@
 			\includegraphics[width=\textwidth]{chap2/skins/2_100x_v2.jpg}
 %			\subcaption{after 10s ultrasonication}		
 		\end{subfigure}
-		\caption[Material remanants from lithography]{Material remanants from lithography. Gold edges exhibit a bluish remnant edge.}\label{fig:lithography_skins}
+		\caption[Material remanants from lithography]{Material remnants from lithography. Gold edges exhibit a bluish remnant edge.}\label{fig:lithography_skins}
 	\end{figure}
 	
-	This is likely due to metal deposition (ie, Chromium, see \cref{sec:deposition}) forming layers on the sides of lithography wells, as the skins have very similar geometry to that of either the wells or the edges. The spinning speeds give resist heights (ie, the well edge heights) roughly the same as feature width ($\approx$1$\mu$m minimum), matching the observed result. 
+	This is likely due to metal deposition (i.e. Chromium, see \cref{sec:deposition}) forming layers on the sides of lithography wells, as the skins have very similar geometry to that of either the wells or the edges. The spinning speeds give resist heights (i.e. the well edge heights) roughly the same as feature width ($\approx$1$\mu$m minimum), matching the observed result. 
 	
 	Ultrasonication (see \cref{sec:ultrasonication}) can be used to attempt to remove edges after lift off, however there is risk of damaging samples of graphene.
 	
 	\paragraph{LOR-1A \& AZ-1512HS}
-	The issue with a single layer photoresist processes, outlined above, is that well edges allow deposited materials to adhere, leaving 'skins'. One way to prevent this from happening is to use a multilayer process. Two resist layers are spun onto the sample, with the bottom film being more sensitive to the lithography process than the top (ie, develops faster, or is more sensitive to exposure). When developed, the bottom layer \textit{undercuts} the top layer, stopping adhesion to edges of the well when material is deposited. This process is depicted in \cref{fig:bilayer_lithography}.
+	The issue with a single layer photoresist processes, outlined above, is that well edges allow deposited materials to adhere, leaving 'skins'. One way to prevent this from happening is to use a multilayer process. Two resist layers are spun onto the sample, with the bottom film being more sensitive to the lithography process than the top (i.e., develops faster, or is more sensitive to exposure). When developed, the bottom layer \textit{undercuts} the top layer, stopping adhesion to edges of the well when material is deposited. This process is depicted in \cref{fig:bilayer_lithography}.
 	
 	\begin{figure}[H]
 		\centering
@@ -212,16 +214,19 @@
 	\subsubsection{Developers}\label{sec:developer}
 	Developers are used to dissolve exposed / unexposed areas of photoresist films. We use AZ-726 in conjunction with AZ-1512HS. Using a development time complementary to the exposure time is important to not overdevelop features, as material in proximity to exposed areas is at risk of some structural damage, and developers continue to react with the remaining structure over time.
 	
+	\subsubsection{Contact pad dimensions}
+	To make contacts large enough to connect probestation probes to (see \cref{sec:probestation}), Au pads were created usually with a minimum dimension of 400$\mu$m width, and a larger length dimension. This meant that wirebonding was not necessary for small contacts, which saved one step of the measurement process, although PCB boards had been designed with wirebonding in mind (see \cref{sec:pcb}).
+	
 	\subsection{UV Ozone surface preparation}\label{sec:uv_ozone}
 	%TODO Cite papers here.
-	Large resistances can occur when trying to make contact with graphene. This can be for a variety of reasons. Resist residues between the deposited pads and graphene can be insulating, perhaps non-metalic bonding occurs between deposited metals and graphene, or the oxidisation of metals being deposited (ie, chromium oxide) could occur.
+	Large resistances can occur when trying to make contact with graphene. This can be for a variety of reasons. Resist residues between the deposited pads and graphene can be insulating, perhaps non-metalic bonding occurs between deposited metals and graphene, or the oxidisation of metals being deposited (i.e., chromium oxide) could occur.
 	
 	Serveral studies by Li \etal\cite{li_ultraviolet/ozone_2013} and Nath \etal\cite{nath_achieving_2014,nath_search_2016} have shown the ability to reduce contact resistance of graphene by using UV ozone treatement, to less than 200 $\Omega$, a small contact resistance.
 	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.6\textwidth]{chap2/uvozone/UVOzone}
-		\caption{Cleaning of graphene using UV Ozone (Source: Li \etal. \cite{li_ultraviolet/ozone_2013})}\label{fig:UV_ozone} (a) Before transfer (b) After photolithography  (c)$\to$(f) UVO treatment for 5, 10, 16, 22 min, respectively. Scale bar: 1$\mu$m.
+		\caption[Cleaning of graphene using UV Ozone]{Cleaning of graphene using UV Ozone (Source: Li \etal. \cite{li_ultraviolet/ozone_2013})}\label{fig:UV_ozone} (a) Before transfer (b) After photolithography  (c)$\to$(f) UVO treatment for 5, 10, 16, 22 min, respectively. Scale bar: 1$\mu$m.
 	\end{figure}
 	
 	UV Ozone treatment refers to the use of UV light to generate photochemical reactions on sample surfaces. $185$nm light is used to generate ozone O$_3$ from bonding molecular (O$_2$) oxygen, while $254$nm light is used to dissociate ozone to molecular and singlet oxygen (O$_1$), the latter of which is reactive with substrate surfaces. Increasing stage temperature also will increase the etching rate that occurs. UV Ozone is used in this context to clean the graphene exposed in our developed wells, as seen in \cref{fig:UV_ozone}.
@@ -230,7 +235,7 @@
 		\vspace{-0.5cm}
 		\centering
 		\includegraphics[width=0.32\textwidth]{chap2/deposition}
-		\caption{E-beam Evaporation (Source: \cite{noauthor_understanding_nodate})}\label{fig:ebeamevap}
+		\caption[E-beam Evaporation]{E-beam Evaporation (Source: \cite{noauthor_understanding_nodate})}\label{fig:ebeamevap}
 	\end{wrapfigure}
 	
 	To determine an appropriate etching time for the particular tool used, two wafers with grapehe flakes at times of 5m and 15m were cleaned using UV Ozone. The 15m devices were etched away completely, however the 5m device provided the first low resistance contact observed, after many iterations of devices.
@@ -273,7 +278,7 @@
 			\includegraphics[width=\textwidth]{chap2/US/2_100x_after10sAcetoneUS.jpg}
 			\subcaption{after 10s ultrasonication}		
 		\end{subfigure}
-		\caption{Ultrasonication used to remove material remanants from lithography.}\label{fig:lithography_skins_us}Note the movement or loss of gold material on the middle probes.
+		\caption{Ultrasonication used to remove material remnants from lithography.}\label{fig:lithography_skins_us}Note the movement or loss of gold material on the middle probes.
 	\end{figure}
 	
 	\begin{figure}[H]
@@ -293,13 +298,19 @@
 		\caption{Ultrasonication that has broken graphene sample.}\label{fig:lithography_skins_break}
 	\end{figure}
 
+	\subsection{Argon/Hydrogen Annealing}\label{sec:annealing}
+	%TODO Complete
+
+	\subsection{PCB board mounting}\label{sec:pcb}
+	%TODO Complete
+
 	\subsection{Oxide stamping}
 	% Introduction to metal stamping technique. Don't talk about optimisation here.
 	Zavabeti \etals\cite{zavabeti_liquid_2017} work on thin oxides synthesised by liquid metal introduces two methods to create such oxides. The first involves the exfoliation of oxide layers from the surface of metal droplets, and the second involves the suspension of oxide layers in water, created by injecting gas through the metal liquid. This section will only describe the former in detail, which is used in this project. Refer to \cref{chap:thinoxides} for further optimisation and exploration of the liquid metal technique.
 	
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth]{chap2/liq_metal_exfol}
-		\caption{Process of liquid metal oxide exfoliation (source: Zavabeti \etal{}\cite{zavabeti_liquid_2017})}\label{fig:liq_metal_exfoliation}
+		\caption[Liquid metal oxide exfoliation]{Process of liquid metal oxide exfoliation (source: Zavabeti \etal{}\cite{zavabeti_liquid_2017})}\label{fig:liq_metal_exfoliation}
 	\end{figure}	
 	
 	A eutectic gallium melt is made by combining elements such as gallium, indium and tin. At room temperature these alloys are metallic liquids, and form atomically thin oxides on their surfaces. Because the formation of oxides change the Gibbs free energy of the system, those that provide the greatest reduction dominate the surface\cite{zavabeti_liquid_2017}. After the melt is formed and exposed to oxygen for some time, the oxide is isolated by a van der Waals exfoliation technique, touching the liquid metal droplet to the solid substrate, as seen in \cref{fig:liq_metal_exfoliation}.
