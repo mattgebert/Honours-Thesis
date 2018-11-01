@@ -299,10 +299,40 @@
 	\end{figure}
 
 	\subsection{Argon/Hydrogen Annealing}\label{sec:annealing}
-	%TODO Complete
+	\begin{wrapfigure}[9]{r}[0pt]{7cm}
+		\vspace{-1.1cm}
+		\centering
+		\includegraphics[width=0.45\textwidth]{chap2/annealing1}
+		\caption[Ag/H annealing]{Ag/H annealing of exfoliated graphene devices}
+	\end{wrapfigure}
+	
+	Many researchers who have produced electronic devices from graphene use an Argon/Hydrogen annealing process to clean their samples from polymer residues remaining from transfer or lithography processes. \cite{lin_graphene_2012,cooper_experimental_2012,soldano_production_2010,chen_intrinsic_2008}
+	
+	We use a process of heating for 30 minutes to 340 $^\circ$C, annealing with flow rates of 400 sccm Ar / 200 sccm H for 2 hours, before naturally cooling back to ambient temperature.
 
 	\subsection{PCB board mounting}\label{sec:pcb}
-	%TODO Complete
+	\begin{figure}[H]
+%	\begin{wrapfigure}[9]{r}[0pt]{5cm}
+%		\vspace{-1.1cm}
+		\centering
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[width=0.5\textwidth]{chap2/pcb_footprint}
+			\caption{CAD Footprint}
+		\end{subfigure}
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[width=0.4\textwidth]{chap2/pcb_image}
+			\caption{Image of product}
+		\end{subfigure}
+		\caption[PCB wafter mount]{PCB for mounting wafers to connect backgates and wirebond pads of device.}
+		%	\end{wrapfigure}
+	\end{figure}
+	PCB boards were designed for mounting small 1 cm$^2$ Si|\silicondioxide{} wafers. Wafers are mounted using a conductive silver epoxy (CircuitWorks Conductive Epoxy) from Chemtronics. PCB's were produced through PCBway.com, using a singe layer design with immersion gold surface finishing. Unfortunately the FR4-TG (flame retardant glass transition temperature) was selected at 130-140, which means these boards cannot withstand temperatures above 140 $^\circ$C. PCBway also offer a 180 TG option, which would be used in the future.
+	
+	These PCB boards provide pads to connect probes to the backgated Si. Additionally, to avoid scratching of lithography pads, extra pads surround the mounting point to wirebond connections to, and then place probes onto.
+	
+	PCB Designs using Autocad Eagle software can be found at \href{https://www.github.com/mattgebert/eaglecircuits}{github.com/mattgebert/eaglecircuits}.
 
 	\subsection{Oxide stamping}
 	% Introduction to metal stamping technique. Don't talk about optimisation here.

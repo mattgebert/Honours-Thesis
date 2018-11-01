@@ -88,7 +88,7 @@
 			&\begin{subfigure}{0.4\textwidth}
 				\centering
 				\includegraphics[width=0.8\textwidth]{chap2/probes}
-				\caption{Tungsten spring probes, 25$\mu$m radius tip}
+				\caption{Tungsten spring probes, 25 sss$\mu$m radius tip}
 			\end{subfigure}\vspace{0.5cm}\\
 			&\begin{subfigure}[b]{0.4\textwidth}
 				\includegraphics[width=\textwidth]{chap2/probestation_schem}
@@ -100,14 +100,46 @@
 	\end{figure}
 	
 	\subsubsection{Vacuum}
-	A roughing pump is used in conjunction with a turbo pump to $1.5\times10^{-2}$bar and $7\times10^{-4}$bar (turbo). This pumping removes any trapped oxygen and contamination of gasses that might condense onto our sample of graphene at low temperature. 
+	A roughing pump is used in conjunction with a turbo pump to create pressures of $1.5\times10^{-2}$ mBar and $5\times10^{-5}$ mBar (turbo at 1.35 kHz operational frequency). %TODO double check values.
+	This pumping removes any trapped oxygen and contamination of gasses that might condense onto our sample of graphene at low temperature.
 	
 	\subsubsection{Temperature control}
-	To control the 
+	\begin{wrapfigure}[12]{r}[0pt]{6.5cm}
+		\vspace{-1cm}
+		\centering
+		\includegraphics[width=0.45\textwidth]{chap2/probestationrefridgerator}
+		\caption{Probestation refrigerator}\label{fig:probestation_temp_control}
+	\end{wrapfigure}
+	Temperature is controlled by a combination of heating and cooling power. The metallic inlet protruding from under the main stage in \cref{fig:probestation} allows the flow of liquid nitrogen/helium through the sample stage to cool down the sample. This process is illustrated in \cref{fig:probestation_temp_control}.
 	
-	\paragraph{PID control}
+	
+	Heating is provided via a 50W calibrated silicon diode.	Thermocouples with high accuracy allow the ability to control the heating power to stabilise to a setpoint temperature, with small fluctuation. %TODO Quote how much accuracy from manual 
+	This is achieved by the use of a PID controller system, where the measured temperature difference from a setpoint is used to control the diode power. By using the proportional , integral and differential gains, rapid and stable responses to shifts in desired temperature are be controlled.
+	\begin{itemize}
+		\itemsep-0.1cm
+		\item Proportional gain adds some power based on the difference from the desired solution.
+		\item Integral gain ramps the power over time, based off long term difference. This prevents offsets from a final setpoint. 
+		\item Differential gain only considers the changing response. It smoothens trajectory of PI controller, reducing overshoot and stabilising levels faster.
+	\end{itemize}
+	
 	\subsubsection{Static Discharge}
+	Care needs to be taken when using the probestation with small graphene samples. Static discharge can cause large potential differences across graphene, consequently burning the sample by a high current. Discharge can be protected against by taking some precautions below.
+	
+	BNC cables employ a coaxial (ground and signal) wire configuration, and are used to connect to the probestation. This ensures the probestation shield is grounded, the same as the instrument ground. This protects the device from any external static buildup. If the probes are then grounded, they are at the same potential as the shield.
+	
+	Additionally, when a measurement was not taking place, BNC connections to the device were grounded using 50$\Omega$ terminators, connected via T terminals to avoid floating connections and minimising static while connecting terminators. This meant that any external charge would have a low resistance current path to flow, thereby protecting the sample. 
+	
+	Static straps were also worn and connected to the instrument ground to ensure no clothing item would build up static on an individual.
+		
 	\subsubsection{Probes}
+	\begin{wrapfigure}[12]{r}[0pt]{5.5cm}
+		\vspace{-1cm}
+		\centering
+		\includegraphics[width=0.35\textwidth]{chap2/probestation_micro}
+		\caption{Probestation micro-manipulated stages}\label{fig:probestation_micro}
+	\end{wrapfigure}
+	A combination of regular and flexible tungsten probes are used in the probestation to make electrical connections to samples. 
+	When touching probes down, the respective BNC was connected to a 10 M$\Omega$ resistance terminator. Rather than protecting from external static, this was in case the sample (sometimes doped) was resting at a potential other than ground, and had free charge to discharge. A high resistance terminator slows this current, before allowing the connection of an appropriate ground.
 	
 	
 \end{document}
