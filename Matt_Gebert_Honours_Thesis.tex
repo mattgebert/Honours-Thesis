@@ -27,6 +27,7 @@
 \usepackage{graphicx} %Enables use of \DeclareGraphicsExtensions command and setting graphics path.
 \usepackage[toc,page]{appendix}%Allows the use of chapters within a \begin{appendices} environment.
 \usepackage{multirow} %Allows the placement of multirow images in the figure environment. https://tex.stackexchange.com/a/394954/137109
+\usepackage{longtable} %Allows the display of large tables over multiple pages. Used in appendix. https://www.tablesgenerator.com/latex_tables#
 
 %\usepackage{glossaries} %To make a glossary.  \makeglossaries  \newglossaryentry{latex}{name= , description={}}
 %						\newacronym{gcd}{GCD}{Greatest Common Divisor}
@@ -189,8 +190,10 @@
 
 \begin{appendices}
 	\chapter{Raman spectroscopy samples}
+	\chapter{Theoretical transport in graphene}
+	\subfile{appendicies/theoretical_transport_values.tex}
 	\chapter{Labview programs}
-	
+		
 \end{appendices}
 
 

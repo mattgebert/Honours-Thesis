@@ -74,33 +74,32 @@
 	\end{figure}
 	
 	\subsection{Graphene}
-	Since the realisation of graphene in 2004 \cite{novoselov_electric_2004}, much research has been focused to finding efficient ways of producing large amounts of graphene \cite{zhang_review_2013}. Originally, the first samples ever created which have primarily been used for sensitive measurements have been conducted using a method of exfoliation (\cref{sec:exfoliation}). These samples typically exhibit better electronic properties than those produced by other methods.
+	Since the realisation of graphene in 2004 \cite{novoselov_electric_2004}, much research has been focused to finding efficient ways of producing large amounts of graphene \cite{zhang_review_2013}. The first samples studied were created using mechanical exfoliation (\cref{sec:exfoliation})\cite{novoselov_two-dimensional_2005}. These samples typically exhibit better electronic properties than those produced by other methods, and allow for higher sensitivity in measurements. However production is painstaking and produces very small samples.
 	Since 2008/2009, CVD (\cref{sec:CVD}) of carbon to create graphene films has provided another prominent method to produce large films for industrial scale applications. In particular, growth of graphene on copper sheets \cite{li_large-area_2009} has been a reliable way producing these large uniform sheets.
 	
-	There are other methods not used in this thesis, such as epitaxial growth of graphene via SiC uses heating to boil off silicon atoms to form a layer of graphene on it's surface.
+	There are other methods not used in this thesis, such as epitaxial growth of graphene via SiC uses heating to boil off silicon atoms to form a layer of graphene on its surface \cite{berger_ultrathin_2004,hass_highly_2006}.
 	
 	\subsection{Chemical vapour deposition graphene}\label{sec:CVD}
-	Graphene can be growth via chemical vapour deposition, resulting in particularly large uniform sheets when grown on copper \cite{li_large-area_2009}. This is a widely used method of producing readily available graphene. Graphene produced in this fashion needs to be transferred onto an insulating layer of oxide to create a gate, or be gated by using a deposition method. We have used the former, which will introduce some cracks, folding and wrinkling disorder when transferred.
-	
 	\begin{wrapfigure}[17]{r}[0pt]{8cm}
 		\centering
-		\vspace{-0.5cm}
+		\vspace{-0.65cm}
 		\includegraphics[width=0.5\textwidth]{chap2/cvd_graphene}
 		\caption[CVD graphene grown on Cu transferred onto \silicondioxide{} and Au pads.]{CVD graphene grown on Cu transferred onto \silicondioxide{} and Au pads. The contrast differences due to the autoexposure of the camera software.} \label{fig:cvd_grpahene} 
 	\end{wrapfigure}
+	Graphene can be growth via chemical vapour deposition, resulting in particularly large uniform sheets when grown on copper \cite{li_large-area_2009}. This is a widely used method of producing readily available graphene. Graphene produced in this fashion needs to be transferred onto an insulating layer of oxide (gate dielectric) on conducting silicon (gate electrode) to create a gated structure. Alternatively, a top gate can be fabricated by deposition a dielectric material followed by creating metal electrodes on top of the graphene. 
+	We have used the transfer method onto Si/\silicondioxide{} which has a few problems, in that  will introduce some cracks, folding and wrinkling disorder. This is preferable because comparisons can be directly made between exfoliated samples on Si/\silicondioxide{} and CVD transfers.
 
 	To achieve this, a process\cite{zheng_direct_2017} using polymethyl methacrylate (PMMA) is used to 'wet transfer' CVD graphene onto a \silicondioxide{} wafer with pre-deposited Au pads, from a masked e-beam deposition (see \cref{sec:deposition}). 
+	Copper grown CVD graphene, covered by a thin layer of PMMA, is placed in an ammonium persulfate solution, dissolving the copper. Hydrophobic graphene and PMMA floats on the surface, and allows substrates dipped into the solution to collect the graphene/PMMA stack from beneath. After the transfer is complete, the sample is soaked in PG remover to clean off PMMA. PG remover. PG remover is solvent stripper, efficiently removing PMMA and other resist films on a variety of substrates \cite{microchem_pgremover}. PG remover can also be used as a liftoff solvent, which will be discussed later in \cref{sec:liftoff}. An example device of transferred CVD graphene is shown in \cref{fig:cvd_grpahene}.
 	
-	Copper grown CVD graphene, covered by PMMA, is placed in an ammonium persulfate solution, dissolving the copper. The remaining graphene and PMMA remains hydrophobic on the surface, and allows substrates to collect the sample beneath. After the transfer is complete, the sample is soaked in PG remover to clean off PMMA. An example device is shown in \cref{fig:cvd_grpahene}. 
-	
-	We seldom used this technique to produce graphene devices due to the area coverage requirement of an oxide as well as the lack of geometric definition.
+	We seldom used this technique to produce graphene devices, due to issues in creating such large area coverage with liquid metal oxide synthesis (refer to \cref{chap:thinoxides}). Another issue is the lack of geometric definition, however this can be found, as described in \cref{sec:findinggeometricfactor}. %TODO make oxide reference more specific?
 	
 	\subsection{Exfoliation of graphene}\label{sec:exfoliation}
 	Exfoliation in materials refers to the cleaving thin layers (or leaves) off a larger sample, and acquiring them onto the substrate. We exfoliate graphene onto Si/SiO$_2$ wafers. 
-	Generally exfoliation involves pressing tape/surfaces against a bulk crystal (such as highly orientated pyrolytic graphite (HOPG), Kish graphite, natural graphite, or graphenium). Due to van der Waals interactions, layers of graphite are transferred to the desired surface. By repeated peeling of the same tape, a thin coverage can be obtained and then transferred onto substrates, such as \silicondioxide.
+	Generally exfoliation involves pressing tape/surfaces against a bulk crystal (such as highly orientated pyrolytic graphite (HOPG), Kish graphite, or natural graphite). Due to van der Waals interactions, layers of graphite are transferred to the desired surface. By repeated peeling of the same tape, a thin coverage can be obtained and then transferred onto substrates, such as \silicondioxide.
 	Exfoliation can take a variety of forms, from Geim's method \cite{novoselov_two-dimensional_2005}, to directly applying scotch tape to HOPG and then pressing against SiO$_2$, before peeling the tape off.
 	
-	Huang \etal investigated a reliable method of exfoliation to produce large area and high quality samples \cite{huang_reliable_2015}, which has been widely cited. Tape with graphite flakes is brought into contact with a silicon dioxide wafer, and an annealing process of heating the tape and wafer for 2-5m at $\sim 100^\circ$C on a conventional lab hot plate is used. After allowing cooling to room temperature, the tape is removed. They find under optical microscopy that graphene flakes with uniform thickness routinely range from $\sim 20\mu$m to above $100\mu$m. In this context, annealing is expected to increase traction due to the remove of gas molecules trapped between SiO$_2$ and graphite.\newline 
+	Huang \etal{.} investigated a reliable method of exfoliation to produce large area and high quality samples \cite{huang_reliable_2015}, which has been widely cited. Tape with graphite flakes is brought into contact with a silicon dioxide wafer, and an annealing process of heating the tape and wafer for 2-5 minutes at $\sim 100^\circ$C on a conventional lab hot plate is used. After allowing cooling to room temperature, the tape is removed. They find under optical microscopy that graphene flakes with uniform thickness routinely range from $\sim 20$ $\mu$m to above $100$ $\mu$m. In this context, annealing is expected to increase adhesion due to the remove of gas molecules trapped between SiO$_2$ and graphite.\newline 
 	
 	The following steps make up the process of exfoliation we optimised:
 	\begin{enumerate}
@@ -114,9 +113,9 @@
 		\item Slowly peel tape at an acute angle from the glass slide, roughly at 6s per cm over the wafer.
 	\end{enumerate}
 	
-	We found success can depend on HOPG crystal, given we tried cleavage using ZYA and ZYB quality crystals and had repeated failure. Changing to a new ZYA crystal provided immediate results using the same process.
+	We found success can depend on the particular HOPG crystal used; given we tried cleavage using ZYA and ZYB quality crystals and had repeated failure to obtain any significant sheets of graphene larger than 4 $\mu$m in dimension. Changing to a new ZYA crystal provided immediate results using the same process, with the observation of many wafers per substrate larger than $10$ $\mu$m in dimension.
 	
-	After exfoliation, graphene was identified under a 20x microscope lens, raster scanning across wafers to identify any samples big enough. Typically to make a device using photolithography, a sample of graphene required a minimum 8$\mu$m in dimensional length to be useful.
+	After exfoliation, graphene was identified under a 20x microscope lens, by raster scanning across each wafer to identify graphene samples of a usable size in photolithography. Typically to make a device using photolithography, a sample of graphene required a minimum of 8$\mu$m in its longest lateral dimension to be useful.
 	
 	\subsection{Lithography}\label{sec:lithography}
 	Lithography can be used to create polymer structures that allow the deposition of desired material in 2D geometries. This is used to create electrical contacts onto graphene. This process and the adjustments made for fabricating our devices are described in this section.\newline
@@ -130,7 +129,7 @@
 	\end{enumerate}
 	
 	\subsubsection{Spin coating photoresists}\label{sec:resists}
-	A spin coater is used to deposit thin films of materials. A vacuum holds a sample on the spinner, before drops of photoresist are introduced to the sample, which is then spun over sometime to achieve a uniform thickness of photoresist. Baking on a hotplate follows to set the photoresist layer on the sample.
+	A spin coater is used to deposit thin films of materials. A vacuum holds a sample on the spinner, before drops of photoresist are introduced to the sample, which is then spun for a predetermined time and  sometime to achieve a uniform thickness of covering photoresist. Baking on a hotplate follows to set the photoresist layer on the sample.
 	
 	Photoresists vary in their spinning thickness, but also their exposure rates. Positive photoresists dissolve in particular developer solutions when exposed to light, while negative photoresists dissolve if not exposed to light. We have only used positive photoresists, as we have primarily been creating structures for deposition, and not etching material where you want the bulk of the wafer exposed.
 	
@@ -144,8 +143,8 @@
 		\caption[Spin curve of AZ-1512HS]{Spin curve of AZ-1512HS (Source: EMD Performance Materials\cite{az1500_series_spincurve})}
 	\end{figure}
 	
-	\paragraph{Skin issues with HMDS}\label{sec:skin_issues}
-	When using HMDS and AZ-1512HSHS in conjunction, significant amounts of deposition remenants were found on samples as seen in \cref{fig:lithography_skins}.
+	\paragraph{Issues with HMDS}\label{sec:skin_issues}
+	When using HMDS and AZ-1512HSHS in conjunction, significant amounts of deposition remnants were found on samples as seen in \cref{fig:lithography_skins}.
 	
 	\begin{figure}[H]
 		\centering
@@ -164,12 +163,12 @@
 		\caption[Material remanants from lithography]{Material remnants from lithography. Gold edges exhibit a bluish remnant edge.}\label{fig:lithography_skins}
 	\end{figure}
 	
-	This is likely due to metal deposition (i.e. Chromium, see \cref{sec:deposition}) forming layers on the sides of lithography wells, as the skins have very similar geometry to that of either the wells or the edges. The spinning speeds give resist heights (i.e. the well edge heights) roughly the same as feature width ($\approx$1$\mu$m minimum), matching the observed result. 
+	This is likely due to metal deposition (i.e. Chromium, see \cref{sec:deposition}) forming layers on the sides of lithography wells, as the `skins' have very similar geometry to that of either the wells or the edges. The spinning speeds give resist heights (i.e. the well edge heights) roughly the same as feature width ($\approx$1 $\mu$m minimum), matching the observed result. 
 	
 	Ultrasonication (see \cref{sec:ultrasonication}) can be used to attempt to remove edges after lift off, however there is risk of damaging samples of graphene.
 	
 	\paragraph{LOR-1A \& AZ-1512HS}
-	The issue with a single layer photoresist processes, outlined above, is that well edges allow deposited materials to adhere, leaving 'skins'. One way to prevent this from happening is to use a multilayer process. Two resist layers are spun onto the sample, with the bottom film being more sensitive to the lithography process than the top (i.e., develops faster, or is more sensitive to exposure). When developed, the bottom layer \textit{undercuts} the top layer, stopping adhesion to edges of the well when material is deposited. This process is depicted in \cref{fig:bilayer_lithography}.
+	The issue with a single layer photoresist processes, outlined above, is that well edges allow deposited materials to adhere, leaving skins. One way to prevent this from happening is to use a multilayer process. Two resist layers are spun onto the sample, with the bottom film being more sensitive to the lithography process than the top (i.e., develops faster, or is more sensitive to exposure). When developed, the bottom layer \textit{undercuts} the top layer. This creates a break between material that is adhered to edges of the well and material that is adhered to the substrate in deposition. This process is depicted in \cref{fig:bilayer_lithography}.
 	
 	\begin{figure}[H]
 		\centering
@@ -235,7 +234,7 @@
 		\vspace{-0.5cm}
 		\centering
 		\includegraphics[width=0.32\textwidth]{chap2/deposition}
-		\caption[E-beam Evaporation]{E-beam Evaporation (Source: \cite{noauthor_understanding_nodate})}\label{fig:ebeamevap}
+		\caption[E-beam evaporation]{E-beam evaporation (Source: \cite{noauthor_understanding_nodate})}\label{fig:ebeamevap}
 	\end{wrapfigure}
 	
 	To determine an appropriate etching time for the particular tool used, two wafers with grapehe flakes at times of 5m and 15m were cleaned using UV Ozone. The 15m devices were etched away completely, however the 5m device provided the first low resistance contact observed, after many iterations of devices.
@@ -249,9 +248,11 @@
 		\vspace{-0.5cm}
 		\centering
 		\includegraphics[width=0.35\textwidth]{chap2/S09_100x}
-		\caption[Deposition contacts]{Cr/Gold/Cr/\silicondioxide{} contacts.}\label{fig:depos_pads}
+		\caption[Deposition contacts]{Cr/Au/Cr/\silicondioxide{} contacts.}\label{fig:depos_pads}
 	\end{wrapfigure}
-	50nm of Au (Gold) was originally deposited with a Cr (Chromium) adhesion layer of 5nm to promote contact to SiO$_2$, however issues with metallic contact to graphene arose. In case of chromium oxidisation during deposition, creating an insulating layer to graphene, a thinner layer (2nm) of chromium was instead deposited. This is reasonable as pinhole effects resulting from a thin deposited Cr layer do not affect bulk transport.
+	Initially 50nm of Au (gold) was deposited with a Cr (chromium) adhesion layer of 5nm to promote contact to SiO$_2$. Issues arose with metallic contact to graphene (optically it looked like there should be a connection), and it was suspected that some insulating material was creating a barrier between graphene and the Au metal. UV ozone has already been discussed above as one of the ways to remove unseen polymer, but another possibility was the oxidisation of chromium metal during E-beam evaporation.
+	In case of chromium oxidisation during deposition, creating an insulating layer to graphene, a thinner layer (2nm) of chromium was instead deposited. This was done intentionally that there might be pinholes due to the thinness of the film, so that there would be some direct contact from gold to graphene, but still the adhesion support from chromium. 
+	This deposition amount was introduced the same time as UV Ozone, which marked the success of our first conducting devices.
 	
 	\subsubsection{Oxide Protection}\label{sec:deposition_oxide_protection}
 	
@@ -261,7 +262,7 @@
 		\includegraphics[width=0.32\textwidth]{chap2/liftoff}
 		\caption{PG Remover liftoff.}\label{fig:liftoff}
 	\end{wrapfigure}
-	In using metal liquids to cover devices with oxides, the gold reacted strongly to the liquid metallic environment, destroying pre-established pads. This is further described in \cref{chap:thinoxides}, however the result was to use additional layers, another layer of Cr 2nm and a layer of SiO$_2$ 20nm. These additional layers do not prevent contact through contact probes and provide insulation from the bulk of metal liquid reactions.
+	In using metal liquids to cover devices with oxides, I found that the gold reacted strongly to the liquid metallic environment, destroying pre-established pads. This is further described in \cref{chap:thinoxides}, however I was able to overcome this by using additional deposition layers; another layer of Cr 2nm and a layer of SiO$_2$ 20nm. These additional layers do not prevent contact through contact probes and provide insulation from the bulk of metal liquid reactions.
 	
 	\subsection{Lift-off}\label{sec:liftoff}
 	To remove the remaining gold covered photoresist on the substrate, a solvent called PG remover is used to emerse samples at 80 $^\circ$C. Using a pipette to generate soft fluid flow around the device, the excess gold is slowly removed. 
@@ -311,9 +312,9 @@
 		\caption[Ag/H annealing]{Ag/H annealing of exfoliated graphene devices}
 	\end{wrapfigure}
 	
-	Many researchers who have produced electronic devices from graphene use an Argon/Hydrogen annealing process to clean their samples from polymer residues remaining from transfer or lithography processes. \cite{lin_graphene_2012,cooper_experimental_2012,soldano_production_2010,chen_intrinsic_2008}
+	Many researchers who have produced electronic devices from graphene use an argon/hydrogen annealing process to clean their samples from polymer residues remaining from transfer or lithography processes. \cite{lin_graphene_2012,cooper_experimental_2012,soldano_production_2010,chen_intrinsic_2008}
 	
-	We use a process of heating for 30 minutes to 340 $^\circ$C, annealing with flow rates of 400 sccm Ar / 200 sccm H for 2 hours, before naturally cooling back to ambient temperature.
+	We use a process of heating for 30 minutes to 340 $^\circ$C, annealing with flow rates of 400 sccm Ar / 200 sccm $H_2$ for 2 hours, before naturally cooling back to ambient temperature.
 
 	\subsection{PCB board mounting}\label{sec:pcb}
 	\begin{figure}[H]
@@ -333,15 +334,15 @@
 		\caption[PCB wafter mount]{PCB for mounting wafers to connect backgates and wirebond pads of device.}
 		%	\end{wrapfigure}
 	\end{figure}
-	PCB boards were designed for mounting small 1 cm$^2$ Si|\silicondioxide{} wafers. Wafers are mounted using a conductive silver epoxy (CircuitWorks Conductive Epoxy) from Chemtronics. PCB's were produced through PCBway.com, using a singe layer design with immersion gold surface finishing. Unfortunately the FR4-TG (flame retardant glass transition temperature) was selected at 130-140, which means these boards cannot withstand temperatures above 140 $^\circ$C. PCBway also offer a 180 TG option, which would be used in the future.
+	I designed PCB boards for mounting small 1 cm$^2$ Si|\silicondioxide{} wafers. Wafers are mounted using a conductive silver epoxy (CircuitWorks Conductive Epoxy) from Chemtronics. PCB's were produced through PCBway.com, using a singe layer design with immersion gold surface finishing. Unfortunately the FR4-TG (flame retardant glass transition temperature) was selected at 130-140, which means these boards cannot withstand temperatures above 140 $^\circ$C. PCBway also offer a 180 TG option, which should be used in the future.
 	
 	These PCB boards provide pads to connect probes to the backgated Si. Additionally, to avoid scratching of lithography pads, extra pads surround the mounting point to wirebond connections to, and then place probes onto.
 	
-	PCB Designs using Autocad Eagle software can be found at \href{https://www.github.com/mattgebert/eaglecircuits}{github.com/mattgebert/eaglecircuits}.
+	PCB designs using Autocad Eagle software can be found at \href{https://www.github.com/mattgebert/eaglecircuits}{github.com/mattgebert/eaglecircuits}.
 
 	\subsection{Oxide stamping}
 	% Introduction to metal stamping technique. Don't talk about optimisation here.
-	Zavabeti \etals\cite{zavabeti_liquid_2017} work on thin oxides synthesised by liquid metal introduces two methods to create such oxides. The first involves the exfoliation of oxide layers from the surface of metal droplets, and the second involves the suspension of oxide layers in water, created by injecting gas through the metal liquid. This section will only describe the former in detail, which is used in this project. Refer to \cref{chap:thinoxides} for further optimisation and exploration of the liquid metal technique.
+	Zavabeti \etals\cite{zavabeti_liquid_2017} work on thin oxides synthesised by liquid metal introduces two methods to create such oxides. The first involves the exfoliation of oxide layers from the surface of metal droplets, and the second involves the suspension of oxide layers in water, created by injecting gas through the metal liquid. This section will only describe the former exfoliation method in detail, which is used in this project. Refer to \cref{chap:thinoxides} for further optimisation and exploration of the liquid metal technique.
 	
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth]{chap2/liq_metal_exfol}

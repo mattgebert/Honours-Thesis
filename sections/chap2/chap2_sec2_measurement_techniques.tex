@@ -4,22 +4,15 @@
 	
 	To measure the electrical properties of graphene devices (such as those detailed in \cref{sec:fabrication}), particular equipment and methods are employed to observe relevant properties. 
 	
-	\subsection{4 probe measurements}
-	4 probe measurements, also known as Kelvin sensing, utilise four probes to make a more accurate measurement than regular two probe measurements. 
+	\subsection{Four probe measurements}
+	Four probe measurements, also known as Kelvin sensing, utilise four probes to make a more accurate measurement than regular two probe measurements. 
 	
-	Conventional multimeters use a probing voltage with a galvanometer to detect a current running through a sample (in this case, graphene). Based off the detected current, a measurement can be made of the resistance for the known voltage. Because exfoliated graphene can have very small channel widths, it is very sensitiviy to large currents and consequently makes using a multimeter dangerous. Using a multimeter would be fine however, for large area CVD graphene.
+	Conventional multimeters use a probing voltage with a galvanometer to detect a current running through a sample (in this case, graphene). Based off the detected current, a measurement can be made of the resistance for the known voltage. Because exfoliated graphene can have very small channel widths, it is very sensitive to large currents and consequently makes using a multimeter dangerous. Using a multimeter would be fine however, for large area CVD graphene.
 	
-	One advantage of using a 4 probe measurement is that you can use a current-limiting resistance, which has a much larger resistance than your sample ($>100\times$). This allows control of the current running through your sample, ensuring safe limits, and means the resistance of your sample will affect the current flow to less than 1\%. By observing the voltage difference across the sample, a resistance can be inferred from the flowing current. Typical exfoliated graphene devices used in this project have a measured resistance on the order of $\approx$5 K$\Omega$ (\cref{eqn:resistance_measurement}).
-	
-	However, the most significant advantage of using a 4 probe measurement is the ability to avoid including contact resistance, created by the junctions between contact pads and the material of interest (graphene). This is illustrated in \cref{fig:4probemeasurements}.
-	A 4 probe measurement uses a voltage difference measured by probes at different points on the sample material, thereby avoiding any contact resistance included in series, and sampling the voltage along the sample. An example resistance calculation is shown in \cref{eqn:resistance_measurement}.
-	
+	One advantage of using a 4 probe measurement is that you can use a current-limiting resistance. Placing a resistance in series with your devices allows the creation of a nearly constant-current source from an applied voltage. The choice of resistance is such much larger that the sample ($>100\times$) to ensure the current is well approximated by the voltage across the sample and resistance ($V_{sc} - V_{\text{GND}}$) divided by the limiting resistance (an approximation to a voltage divider \cref{eqn:4probecurrent}).
 	\begin{align}
-	R = \frac{V_{b-a}}{I} = \frac{V_{b-a}}{\left(V_{\text{source}}-V_{\text{GND}}\right)/R_{\text{limit}}}  =\frac{5\times 10^{-3}\text{ V}}{1 \text{ V}/10^6 \text{ }\Omega} = 5 \text{ K}\Omega
-	\label{eqn:resistance_measurement}
+		I_{sc} = \frac{V_{sc}-V_{\text{GND}}}{R_{lim} + R_{samp}} \approx \frac{V_{sc}-V_{\text{GND}}}{R_{\lim}} \hspace{0.5cm} \forall \hspace{0.5cm} R_{lim} \gg R_{sample}\label{eqn:4probecurrent}
 	\end{align}
-	 
-	
 	\begin{figure}[H]
 		\centering
 		\begin{subfigure}[t]{0.25\textwidth}
@@ -37,15 +30,24 @@
 			\includegraphics[width=\textwidth]{chap2/4probemeas}
 			\caption{}\label{subfig:4probe}
 		\end{subfigure}
-		\caption[Schematics of resistance measurements]{Schematics of resistance measurements. (\subref*{subfig:mutlimeter}) A multimeter provides little control over the current through the sample, and measures any resistance formed between the gold contacts and the graphene. (\subref*{subfig:4probepseudo}) A pseudo 4 probe measurement uses a voltage difference across the device to calculate it's resistance, inclusive of the series resistance due to the gold contacts. (\subref*{subfig:4probe}) A 4 probe measurement uses a voltage difference measured by probes at different points on the sample material, thereby avoiding any contact resistance included in series, and sampling the voltage along the sample.}
+		\caption[Schematics of resistance measurements]{Schematics of resistance measurements. (\subref*{subfig:mutlimeter}) A multimeter provides little control over the current through the sample, and measures any resistance formed between the gold contacts and the graphene. (\subref*{subfig:4probepseudo}) A pseudo four probe measurement uses a voltage difference across the device to calculate it's resistance, inclusive of the series resistance due to the gold contacts. (\subref*{subfig:4probe}) A four probe measurement uses a voltage difference measured by probes at different points on the sample material, thereby avoiding any contact resistance included in series, and sampling the voltage along the sample.}
 		\label{fig:4probemeasurements}
 	\end{figure}
+	This allows control of the current running through your sample, ensuring safe limits, and means the resistance of your sample will affect the current flow to less than 1\%. By observing the voltage difference across the sample, a resistance can be inferred from the flowing current. Typical exfoliated graphene devices used in this project have a measured resistance on the order of $\approx$5 k$\Omega$ (\cref{eqn:resistance_measurement}).
+	
+	However, the most significant advantage of using a 4 probe measurement is the ability to avoid including contact resistance, created by the junctions between contact pads and the material of interest (graphene). This is illustrated in \cref{fig:4probemeasurements}.
+	A 4 probe measurement uses a voltage difference measured by probes at different points on the sample material, thereby avoiding any contact resistance included in series, and sampling the voltage along the sample. An example resistance calculation is shown in \cref{eqn:resistance_measurement}.
+	
+	\begin{align}
+	R = \frac{V_{b-a}}{I_{sc}} \approx \frac{V_{b-a}}{\left(V_{sc}-V_{\text{GND}}\right)/R_{\text{limit}}}  =\frac{5\times 10^{-3}\text{ V}}{1 \text{ V}/10^6 \text{ }\Omega} = 5 \text{ k}\Omega
+	\label{eqn:resistance_measurement}
+	\end{align}
 	
 	\subsubsection{Sourcemeters}
 	
-	A sourcemeter has the ability to source and measure a stable DC voltage or current. They provide precision, low noise and stability. We use Keithley 2400 SourceMeters \cite{keithley2400} which source voltage from $5\mu$V to 210V, and current from 50pA to 1.05A, and can deliver 520 readings per second at 5$\frac{1}{2}$ digits (ie, 199999).
+	A sourcemeter has the ability to source and measure a stable DC voltage or current. They provide precision, low noise and stability. Dr. Battacharyya and I used Keithley 2400 SourceMeters \cite{keithley2400} which source voltage from $5\mu$V to 210V, and current from 50pA to 1.05A, and can deliver 520 readings per second at 5$\frac{1}{2}$ digits (ie, 199999). 
 	
-	A source meter is used in 4 probe measurements to apply a constant, controlable gate voltage to the Si as directed in \cref{fig:instrumentation_device}. Changing the potential of Si under \silicondioxide{} changes the charged carrier density (electrons, holes) on graphene by using the \silicondioxide{} as a capacitor dielectric. This allows the measurement of the resistivity of graphene as a function of carrier density.
+	A source meter is used in 4 probe measurements to apply a constant, controllable gate voltage to the Si as directed in \cref{fig:instrumentation_device}, whilst being able to limit the current flow. Changing the potential of Si under \silicondioxide{} changes the charged carrier density (electrons, holes) on graphene by using the \silicondioxide{} as a capacitor dielectric. This allows the measurement of the resistivity of graphene as a function of carrier density.
 	
 	\begin{figure}[H]
 		\centering
@@ -55,7 +57,6 @@
 	
 	\subsubsection{Lock-in amplifiers}
 	A lock in amplifier is used to measure very small AC signals. This project used a Stanford Research 830 Lock-in amplifier\cite{sr830}, which uses a significant amount of digital dignal processing (DSP) for it's functionality. It operates on the principles of signal mixing - multiplying a input signal ($f_s$) that is expected at a particular frequency by a reference signal ($f_r$). This mixing generates a DC signal whose amplitude can be measured, directly inferring a signal strength. An example calculation of mixing is shown below in \cref{eqn:mixing}.
-	
 	\begin{align}
 	f_{s}\otimes f_{r} &= \cos(\omega_{s} t + \phi) \otimes \cos(\omega_{r} t )\\
 	&=	\left[\cos(\omega_{s} t)\cos(\phi) - \sin(\omega_{s}t)\sin(\phi)\right] \otimes \cos(\omega_{r} t )\nonumber\\
@@ -65,15 +66,13 @@
 	\end{aligned}\label{eqn:mixing}
 	\end{align}
 	
-	When the two frequencies $\omega_s$ and $\omega_r$ are close, then the sinsoidal components $\omega_s-\omega_r$ form a DC component, while high frequency compliment can be filtered. Only noise close to the signal frequency will be picked up in the filtering, and will only result in low frequency AC output. 
+	When the two frequencies $\omega_s$ and $\omega_r$ are close, then the sinsoidal components $\omega_s-\omega_r$ form a DC component, while high frequency components can be filtered. Only noise that is close to the signal frequency will be picked up in the filtering, with the consequence of low frequency AC output. This is advantageous, as many electronic noise sources follow a 1/f (or pink/flicker) noise spectrum\cite{voss_flicker_1976,hooge_1/f_1994}, meaning that we can avoid high amplitude, low frequency noise. %TODO: Possibly discuss the band filtering, and the possibility of very tight bandpassing using phase sensitive detection
 	
-	The lock in amplifier uses a phase locked loop to generate a reference signal, which is a particular control circuit. The lock in amplifier can either run independently, generating it's own output, or can be locked to an external signal. We use the former in our measurements, to pass a slow 17Hz signal of amplitude 1V$_{rms}$ through graphene devices. 
+	The lock in amplifier uses a phase locked loop to generate a reference signal, which is a particular control circuit. The lock in amplifier can either run independently, generating it's own consistent phase locked output, or can be locked to an external signal. We use the former in our measurements, to cast a slow 17Hz signal of nearly constant amplitude 1V$_{rms}$ across my graphene devices and the limiting resistor, providing a nearly constant amplitude AC current. 
 	
-	A voltage difference is calculated between probes on graphene by the lock in amplifier and outputted. The real component of the voltage difference and the complex phase are recorded - we expect the bulk transport in graphene to be resistive, and a phase is measured to confirm that as we measure.
+	A voltage difference is calculated between probes on graphene by the lock in amplifier and outputted. The real component of the voltage difference and the complex phase are recorded - we expect the bulk transport in graphene to be resistive (ie the output is in phase with the input), and a phase is measured to confirm that as we measure.
 	
 	\subsection{Probe station}\label{sec:probestation}
-	A LakeShore cryogenic probestation (\cref{fig:probestation}) was used to load sample wafers and measure their electronic properties under controlled conditions. In particular, we will touch on temperature control, vacuum ability, and the risk of static discharge.
-		
 	\begin{figure}[H]
 		\centering
 		\begin{tabular}[b]{cc}
@@ -98,13 +97,14 @@
 		\caption[LakeShore Probestation]{LakeShore probestation}\label{fig:probestation}
 		%TODO Check that position is all correct - dodgy to setup...
 	\end{figure}
+	A LakeShore cryogenic probestation (\cref{fig:probestation}) was used to load sample wafers and measure their electronic properties under controlled conditions. In particular, we will touch on temperature control, vacuum ability, and the risk of static discharge.
 	
 	\subsubsection{Vacuum}
 	A roughing pump is used in conjunction with a turbo pump to create pressures of $1.5\times10^{-2}$ mBar and $5\times10^{-5}$ mBar (turbo at 1.35 kHz operational frequency). %TODO double check values.
 	This pumping removes any trapped oxygen and contamination of gasses that might condense onto our sample of graphene at low temperature.
 	
 	\subsubsection{Temperature control}
-	\begin{wrapfigure}[10]{r}[0pt]{6.5cm}
+	\begin{wrapfigure}[11]{r}[0pt]{6.5cm}
 		\vspace{-1.2cm}
 		\centering
 		\includegraphics[width=0.45\textwidth]{chap2/probestationrefridgerator}
@@ -129,8 +129,8 @@
 	
 	Additionally, when a measurement was not taking place, BNC connections to the device were grounded using 50$\Omega$ terminators, connected via T terminals to avoid floating connections and minimising static while connecting terminators. This meant that any external charge would have a low resistance current path to flow, thereby protecting the sample. 
 	
-	Static straps were also worn and connected to the instrument ground to ensure no clothing item would build up static on an individual.
-		
+	Static straps were also worn and connected to the instrument ground to ensure no clothing item would build up static on an individual.\newpage
+	
 	\subsubsection{Probes}
 	\begin{wrapfigure}[12]{r}[0pt]{5.5cm}
 		\vspace{-1cm}
@@ -139,8 +139,7 @@
 		\caption{Probestation micro-manipulated stages}\label{fig:probestation_micro}
 	\end{wrapfigure}
 	A combination of regular and flexible tungsten probes are used in the probestation to make electrical connections to samples. 
-	When touching probes down, the respective BNC was connected to a 10 M$\Omega$ resistance terminator. Rather than protecting from external static, this was in case the sample (sometimes doped) was resting at a potential other than ground, and had free charge to discharge. A high resistance terminator slows this current, before allowing the connection of an appropriate ground.
-	
+	When touching probes down, the respective BNC was connected to a 10 M$\Omega$ resistance terminator. Rather than protecting from external static, this was in case the sample (sometimes doped) was resting at a potential other than ground, and had free charge to discharge. A high resistance terminator reduces this resulting current and increases the time to drain the same amount of charge, before allowing the connection of an appropriate ground.
 	
 \end{document}
 	
