@@ -34,15 +34,56 @@ For a trapezoid, such as in  the width is linearly dependent upon length, and th
 	\frac{1}{\mathcal{G}} &= \int_{0}^{L}\frac{1}{w(x)}dx = \frac{l \left(\log\left[l w_0\right] - \log\left[l w_1\right]\right)}{w_0-w_1} = \frac{l \log\left[w_0/w_1\right]}{w_0-w_1}\\
 	\implies \mathcal{G} &= \frac{w_0-w_1}{l \log\left[w_0 / w_1\right]}
 \end{align}
-In the limit w$_1\to$w$_2$, this result is consistent and returns to the rectangular case.
+In the limit w$_1\to$w$_2$, this result is consistent and returns to the rectangular case. I have included a few samples of which the geometric factor has been calculated:\\\newline
+\begin{minipage}{0.5\textwidth}
+	\centering
+	\includegraphics[width=0.5\textwidth]{chap4/exf6_geom}
+	\captionof{figure}[EXF06 Geometry]{Geometry of exfoliated device 6 (EXF06). Units are in $\mu$m.}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\centering
+	Using the graphene between the gold contacts on the upper half of the device, 
+	\begin{align*}
+		\mathcal{G} &= \left.\frac{w_0-w_1}{l \log\left[w_0 / w_1\right]}\right|_{L\to 4.12, w_0\to 6.37, w_1\to 6.8}\\ &= 1.59773
+	\end{align*}
+\end{minipage}\\\newline\hspace{0.5cm}
+\begin{minipage}{0.5\textwidth}
+	\centering
+	\includegraphics[width=0.9\textwidth]{chap4/exf4_geom}
+	\captionof{figure}[EXF04 Geometry]{Geometry of exfoliated device 4 (EXF04). Units are in $\mu$m.}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\centering
+	Geometric factors from top down: 
+	\begin{align*}
+	\mathcal{G}_A &= \mathcal{G}|_{L\to 3.44, w_0\to 3.81, w_1\to 3.27}\\ &= 1.02707\\
+	\mathcal{G}_B &= \mathcal{G}|_{L\to 3.49, w_0\to 3.22, w_1\to 2.99}\\ &= 0.889278\\
+	\mathcal{G}_C &= \mathcal{G}|_{L\to 4.63, w_0\to 2.99, w_1\to 3.08}\\ &= 0.65546\\
+	\end{align*}
+\end{minipage}\\\newline
 
-This quantity is ill defined for the transferred CVD graphene on top of gold pads, however the relevant geometric quantity can still be found through the gate voltage dependent resistivity (Refer to \cref{sec:findinggeometricfactor}).
-
-
+This quantity is unclear for the transferred CVD graphene on top of gold pads because of the wide coverage across gold and short distances between current pads and voltage pads, however the relevant geometric quantity can still be found through the gate voltage dependent resistivity (Refer to \cref{sec:findinggeometricfactor}).
 
 \section{Gate dependent conductivity}
+After converting resistance measured to resistivity, I invert the resistivity to conductance. This now allows the fitting the gate voltage dependent conductivity (\cref{eqn:gate_dependent_conductivity}).
+\begin{align}
+\sigma = \sqrt{\left(N^{*} e \mu\right)^2 + \left(\rho_S + \frac{1}{N e \mu}\right)^{-2}} \label{eqn:gate_dependent_conductivity}
+\end{align}
+Here $N^{*}$ (also written as $\mathcal{N}$) is the `residual carrier density'  ($m^{-2}$) \cite{adam_self-consistent_2007}, $N$ is the carrier density ($m^{-2}$), e is the elementary charge, $\mu$ is the mobility ($m^2/Vs$) and $\rho_S$ is a resistivity parameter that affects the curvature of of the gate voltage dependent conductivity, particularly in the high voltage limits, but it's origins are unclear.
+The carrier density $N$ is calculated by considering the accumulated charge at the gate. This amount can be calculated for each device, by considering the capacitance of 285nm \silicondioxide{} and the difference in gate voltage from the dirac point.
+\begin{align}
+	N(V_G) &= \frac{C_g}{e} \left|V_{\text{dirac}}-V_G\right|\\
+	C_g &= \epsilon \frac{A}{d} = 3.8 \times 8.85 \times 10^{-12} \frac{1}{285\times 10^{-9}} \approx 1.2 \times 10^{-4}
+\end{align}
+
+In using this fitting function, I only apply the fit to one side of the Vg vs $\rho$ curve's data at a time. This means that the mobility parameter $\mu$ is treated separately for hole and electron like conduction.
+
 
 \subsection{Finding the geometric factor of CVD graphene}\label{sec:findinggeometricfactor}
+
+\section{Temperature \& gate dependent conductivity}
+
+
 
 
 \section{Exfoliated}\label{sec:pristine_exfoliated}
@@ -63,10 +104,6 @@ This quantity is ill defined for the transferred CVD graphene on top of gold pad
 	R = \frac{V}{I} = \frac{V_a-V_b}{I_{in}}
 \end{align}
 
-\begin{align}
-	\sigma = \sqrt{\left(N^* e \mu\right)^2 + \left(\rho_S + \frac{1}{N e \mu}\right)^{-2}}\\
-	N = \frac{C_g}{e} \left|V-V_G\right|
-\end{align}
 
 \begin{align}
 	\rho[V_g,T] = \rho_0[V_g] + \rho_A[T] + \rho_B[Vg,T]
