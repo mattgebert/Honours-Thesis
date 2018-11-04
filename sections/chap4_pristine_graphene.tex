@@ -70,16 +70,46 @@ After converting resistance measured to resistivity, I invert the resistivity to
 \sigma = \sqrt{\left(N^{*} e \mu\right)^2 + \left(\rho_S + \frac{1}{N e \mu}\right)^{-2}} \label{eqn:gate_dependent_conductivity}
 \end{align}
 Here $N^{*}$ (also written as $\mathcal{N}$) is the `residual carrier density'  ($m^{-2}$) \cite{adam_self-consistent_2007}, $N$ is the carrier density ($m^{-2}$), e is the elementary charge, $\mu$ is the mobility ($m^2/Vs$) and $\rho_S$ is a resistivity parameter that affects the curvature of of the gate voltage dependent conductivity, particularly in the high voltage limits, but it's origins are unclear.
-The carrier density $N$ is calculated by considering the accumulated charge at the gate. This amount can be calculated for each device, by considering the capacitance of 285nm \silicondioxide{} and the difference in gate voltage from the dirac point.
+The carrier density $N$ is calculated by considering the accumulated charge at the gate. This amount can be calculated for each device, by considering the capacitance of 285nm \silicondioxide{} and the difference in gate voltage from the Dirac point.
 \begin{align}
-	N(V_G) &= \frac{C_g}{e} \left|V_{\text{dirac}}-V_G\right|\\
+	N(V_G) &= \frac{C_g}{e} \left|V_{\text{Dirac}}-V_G\right|\\
 	C_g &= \epsilon \frac{A}{d} = 3.8 \times 8.85 \times 10^{-12} \frac{1}{285\times 10^{-9}} \approx 1.2 \times 10^{-4}
 \end{align}
 
-In using this fitting function, I only apply the fit to one side of the Vg vs $\rho$ curve's data at a time. This means that the mobility parameter $\mu$ is treated separately for hole and electron like conduction.
+In using this fitting function, I only apply the fit to one side of the Vg vs $\rho$ curve's data at a time. This means that the mobility parameter $\mu$ is treated separately for hole and electron like conduction. 
 
+Fitting was performed on conductivity data, so that parameter fits were sensitive to curvature far from the Dirac point. Unfortunately, this also meant that sensitivity to the Dirac point was lacking during fitting. As a result, I added extra weighting to data near the Dirac point, to ensure the charge impurity parameter $\mathcal{N}$ enforced a good match at the minimum conductivity turning point. This action I took is justified, because if the impurity parameter is not properly fitted, then linked parameters such as the mobility will be incorrectly determined. An example fit for EXF06 is shown in \cref{fig:exf06_78K_VgR}, the same parameters plotted over resistivity and conductivity:
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap4/exf06/EXF006_Asym_Res_vs_Vg_at_Temp_78K}
+%		"chap4/exf06/EXF006_Asym_Res_vs_Vg_at_Temp_78.K.png"
+		\caption{Resistivity fit}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap4/exf06/EXF006_Asym_Cond_vs_Vg_at_Temp_78K}
+		\caption{Conductivity fit}
+	\end{subfigure}
+	\begin{subfigure}{0.16\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap4/exf06/EXF006_Asym_Param_Fit_78K}
+		\caption{Fit parameters}
+	\end{subfigure}
+	\caption[Gate dependent transport of EXF06]{Gate dependent transport of EXF06 at 78K}\label{fig:exf06_78K_VgR}
+\end{figure}
+
+Here the conductivity has been scaled in terms of the conductivity quantum, $e^2/h$ .Further fits for devices at different temperatures can be found in appendix \ref{app:fits}.
 
 \subsection{Finding the geometric factor of CVD graphene}\label{sec:findinggeometricfactor}
+I previously mentioned the issue with finding a geometric factor for CVD graphene. It turns out that from finding the effective impurity density parameter $\mathcal{N}$, we can scale our data to match the correct theoretical mobility $\mu$ predicted for that particular $\mathcal{N}$. The theoretical data we use to find the matching mobility is provided in appendix \ref{app:transport_theoretical}.
+
+A new fit doesn't change the determined $\mathcal{N}$ value, because the mobility $\mu$ is a parameter that scales the minimum conductivity point along with the conal regions $\to$ $\mathcal{N}$ is independent of scaling. 
+
+To check the validity of this method, I compare the geometric factors calculated above for EXF06 and EXF04 to the numerically determined values.
+
+
 
 \section{Temperature \& gate dependent conductivity}
 

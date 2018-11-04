@@ -28,6 +28,7 @@
 \usepackage[toc,page]{appendix}%Allows the use of chapters within a \begin{appendices} environment.
 \usepackage{multirow} %Allows the placement of multirow images in the figure environment. https://tex.stackexchange.com/a/394954/137109
 \usepackage{longtable} %Allows the display of large tables over multiple pages. Used in appendix. https://www.tablesgenerator.com/latex_tables#
+\usepackage[english]{babel} %Required to stop '_' causing issues in file references
 
 %\usepackage{glossaries} %To make a glossary.  \makeglossaries  \newglossaryentry{latex}{name= , description={}}
 %						\newacronym{gcd}{GCD}{Greatest Common Divisor}
@@ -189,10 +190,13 @@
 \bibliography{./bibliography/PhysicsHonours,./bibliography/External}
 
 \begin{appendices}
-	\chapter{Raman spectroscopy samples}
-	\chapter{Theoretical electronic transport in graphene}
+	\chapter{Gate voltage conductivity fits}\label{app:fits}
+	\subfile{appendicies/vgr_fits.tex}
+	\chapter{Theoretical electronic transport in graphene}\label{app:transport_theoretical}
 	\subfile{appendicies/theoretical_transport_values.tex}
-	\chapter{Labview programs}
+	
+%	\chapter{Raman spectroscopy samples}
+%	\chapter{Labview programs}
 		
 \end{appendices}
 
