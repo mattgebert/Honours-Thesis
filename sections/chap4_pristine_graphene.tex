@@ -97,30 +97,107 @@ Fitting was performed on conductivity data, so that parameter fits were sensitiv
 		\includegraphics[width=\textwidth]{chap4/exf06/EXF006_Asym_Param_Fit_78K}
 		\caption{Fit parameters}
 	\end{subfigure}
-	\caption[Gate dependent transport of EXF06]{Gate dependent transport of EXF06 at 78K}\label{fig:exf06_78K_VgR}
+	\caption[Gate dependent transport of EXF06]{Gate dependent transport of EXF06 at 78K. \\Note parameter units are: mobility $\mu$ in cm$^2$/Vs, $\mathcal{N}$ in $\times 10^{15}$/m$^2$, and $\rho_S$ in  $\Omega$}\label{fig:exf06_78K_VgR}
 \end{figure}
 
 Here the conductivity has been scaled in terms of the conductivity quantum, $e^2/h$ .Further fits for devices at different temperatures can be found in appendix \ref{app:fits}.
 
 \subsection{Finding the geometric factor of CVD graphene}\label{sec:findinggeometricfactor}
-I previously mentioned the issue with finding a geometric factor for CVD graphene. It turns out that from finding the effective impurity density parameter $\mathcal{N}$, we can scale our data to match the correct theoretical mobility $\mu$ predicted for that particular $\mathcal{N}$. The theoretical data we use to find the matching mobility is provided in appendix \ref{app:transport_theoretical}.
+I previously mentioned the issue with finding a geometric factor for CVD graphene. It turns out that from finding the residual carrier density parameter $\mathcal{N}$, we can scale our data to match the correct theoretical mobility $\mu$ predicted for that particular $\mathcal{N}$. The theoretical data we use to find the matching mobility is provided in appendix \ref{app:transport_theoretical}.
 
 A new fit doesn't change the determined $\mathcal{N}$ value, because the mobility $\mu$ is a parameter that scales the minimum conductivity point along with the conal regions $\to$ $\mathcal{N}$ is independent of scaling. 
 
-To check the validity of this method, I compare the geometric factors calculated above for EXF06 and EXF04 to the numerically determined values.
+My method of determining the geometric value is as follows:
+\begin{enumerate}
+	\itemsep0em
+	\item Find minimum conductivity value
+	\item Scale conductivity data such that minimum conductivity is $\approx$4 ($e^2/h$). This is a ballpark figure for most graphene samples\cite{tan_measurement_2007}, and will allow us to get close to the desired mobility $\mu$ and residual carrier density $\mathcal{N}$. 
+	\item Fit the conductivity data to \cref{eqn:gate_dependent_conductivity} to find $\mathcal{N}$ and $\mathcal{\rho_S}$. 
+	\label{enum:fit}
+	\item Refer to the theoretical data in appendix \ref{app:transport_theoretical} to find the corresponding mobility $\mu_0$ for the particular $\mathcal{N}$.
+	\item Scale conductivity by $\lambda$ such that $\left.\sigma\right|_{\mathcal{N},\rho_S,\mu\to\mu_0} \times \lambda = 4 e^2/h$
+	\item Repeat step 3 to make sure $\mu$ and $\mathcal{N}$ match up.
+	\item Calculate geometric factor $\frac{1}{\mathcal{G}} = \frac{\text{Scaled minimum conductivity}}{\text{Original minimum conductivity}}$
+\end{enumerate}
 
+To check the validity of this method, I compare the geometric factors calculated above for EXF06 to the numerically determined values.%\\\newline %TODO: EXF04 if time.
 
+%\begin{minipage}{0.5\textwidth}
+	\paragraph{EXF06}
+	Raw data minimum conductivity was originally 8.5061 ($e^2/h$) at 88K. All conductivity values were divided by 2.1265 to bring the minimum back to 4. Fitting was then done to find the residual carrier density $\mathcal{N}$, seen in \cref{fig:geomfit1}.
+	\begin{figure}[H]
+		\begin{subfigure}[b]{0.6\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{chap4/exf06/geom_fit1}
+			\caption{First fit}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.4\textwidth}
+			\centering
+			\includegraphics[width=0.7\textwidth]{chap4/exf06/geom_fit1_params}
+			\captionof{figure}{First fit params}\label{fig:geomfit1params}		
+		\end{subfigure}
+		\caption[Geometric factor fitting to find $\mathcal{N}$]{First fit to find $\mathcal{N}$}\label{fig:geomfit1}
+	\end{figure}
+	Finding the value $N^{*} = 3.76\times10^{15}$ in appendix \ref{app:transport_theoretical}, we interpolate the corresponding mobility to 0.3460 m$^2$/Vs. Then finding the scaling factor for the conductivity:
+	\begin{align}
+		\lambda \times \sigma\left[\rho_{s}\to 141, \mu\to 0.3460, \mathcal{N}\to 3.76\times 10^{15}\right] &= 4\\
+		\implies \lambda &= 0.743448
+	\end{align}
+	The conductivity is then scaled by the reciprocal of this value, so that the minimum conductivity moves from 4, and allows the appropriate scaling of $\mu$ to match $\mathcal{N}$. The minimum conductivity is now scaled to 5.38034 ($e^2/h$).
+	
+	Performing a second fit to check the new value,
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.4\textwidth]{chap4/exf06/geom_fit2_params}
+		\caption[Geometric factor fitting to find $\mu$]{Second fit to confirm $\mu$ scaling}\label{fig:geomfit2}
+	\end{figure}
+	The mobility is now $3409.61$ cm$^2$/Vs which is very close to 3448.28 cm$^2$/Vs (the tabled value corresponding to $\mathcal{N}=3.79353\times10^{15}$/m$^2$). I could perform a few more iterations to get the mobility even more closer to the theoretical, but seeming I am interpolating non-linear data  between rows, I deemed this to be unnecessary, particularly given the final result.
+
+	Now finding the relative factor between the original minimum conductivity and the scaled minimum conductivity:
+	\begin{align}
+		\frac{1}{\mathcal{G}} &= \frac{5.38034}{8.5061} = 0.632524\\
+		\implies \mathcal{G} &= 1.58097
+	\end{align}
+	This is almost exactly a 1\% difference from our image found geometric value of $\mathcal{G} = 1.59773$, which shows the reliability of this method. 
+	It's noteworthy that finding the geometric value from images will have a degree of uncertainty ($\approx$10\%) in the width and length values used, due to the scaling of images and placement of dimension markers.
+
+	\paragraph{CVD01}
+	Performing the same analysis in our dataset for CVD graphene, I find the minimum conductivity scales from 47.7959 ($e^2/h$) to 4.3794 ($e^2/h$), when the mobility $\mu$ and residual carrier density $\mathcal{N}$ converge on 0.157402 m$^2$/Vs and 6.67275 $\times10^{15}$/m$^2$ respectively (rows 63 \& 64 of appendix \ref{app:transport_theoretical}). This results in a geometric factor of $\mathcal{G} 10.7959$.
+
+	Considering the visual geometry of our CVD graphene in \cref{fig:cvd_sample}, this is likely a reasonable geometric factor, given for a rectangular case $\mathcal{G}$ goes as W/L. In the figure, the majority of the current probably flows through the gold probes rather than through the bulk graphene, and considering the width to length ratio between those probes, I'd suggest it's approximately a factor of 10.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.4\textwidth]{chap2/cvd_graphene}
+		\caption[Device CVD01]{Chemical vapour deposition device CVD01}\label{fig:cvd_sample}
+	\end{figure}
 
 \section{Temperature \& gate dependent conductivity}
+For two devices, CVD01 and EXF06 I was able to capture a reasonable spread of temperature data to analyse the phonon contributions to graphene's transport properties. 
 
+\subsection{$V_G$ R mobility}
 
+Having fitted \cref{eqn:gate_dependent_conductivity} for each temperature, the fitted mobility parameter can be plotted across temperature. Strictly, $\mu(T,V_g) = \frac{\sigma(V_g,T)}{n(V_g) e }$ such that the mobility should be a function of gate voltage and temperature (see below), however I have found temperature dependent mobility which doesn't consider gate dependence. This is a relevant measure, but not concrete.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{chap4/exf06/EXF006_asym_mobility_vs_T}
+	\caption{Gate voltage  vs resistivity temperature dependent mobility for EXF06}\label{fig:temp_mobility}
+\end{figure}
 
+At low temperature  ($\leq 130K$) LA phonons in graphene are expected to weakly dominate scattering, but at higher temperature remote phonon scattering from \silicondioxide{} is expected to dominate \cite{chen_intrinsic_2008}. This is clear in \cref{fig:temp_mobility}, particularly with the steep decent in mobility after 300K.
 
-\section{Exfoliated}\label{sec:pristine_exfoliated}
-
-
-
-\section{CVD}\label{sec:pristine_cvd}
+\subsection{Temperature dependent conductivity}
+To properly analyse the mobility, I will first need to fit the conductivity across gate voltage and temperature, and then the use of $\mu = \frac{\sigma}{N e}$. Here I will show the attempts to produce fits to the temperature and gate dependent conductivity.
+\begin{align}
+\rho[V_g,T] = \rho_0[V_g] + \rho_A[T] + \rho_B[Vg,T] \label{eqn:temp_resistivity}
+\end{align}
+To investigate the contribution of phonons (both longitudinal acoustic and remote polar) to resistivity using the temperature spread of the data taken for devices, my fitting function (\cref{eqn:temp_resistivity}) comprises of three components. $\rho_0$ is the intrinsic gate dependent conductivity found near 0K (we have to allow a free parameter due to not having a measurement near absolute zero), $\rho_A$ is the longitudinal acoustic phonons found within graphene which scales linearly with temperature, and $\rho_B$ is the contribution from remote polar phonons found in \silicondioxide{} affected by both the gating voltage (affecting the polarity) and the temperature (vibrational excitations).
+\begin{align}
+\rho_A[T] &= \left(\frac{h}{e^2}\right) \frac{\pi2 Da^2 k_B T}{2 h^2 \rho_S V_s^2 V_F^2}\\
+\rho_B[V_G,T]&= B \frac{h}{e^2} V_G^{-\alpha_1} \left(\begin{aligned}
+&\frac{1}{\exp\left[(0.059\text{ eV})/k_B T\right]-1}\\ &\hspace{2cm}+\frac{6.5}{\exp\left[(0.115\text{ eV})/k_B T\right]-1}
+\end{aligned}\right)
+\end{align}
+Here 
 
 \begin{align}
 	C_{\text{flake}} = \frac{G_{\text{SiO}_2}-G_{\text{flake}}}{G_{\text{SiO}_2}}
@@ -135,18 +212,9 @@ To check the validity of this method, I compare the geometric factors calculated
 \end{align}
 
 
-\begin{align}
-	\rho[V_g,T] = \rho_0[V_g] + \rho_A[T] + \rho_B[Vg,T]
-\end{align}
+
 
 \begin{align}
-	\rho_A[T] = \left(\frac{h}{e^2}\right) \frac{\pi2 Da^2 k_B T}{2 h^2 \rho_S V_s^2 V_F^2}
-\end{align}
-
-\begin{align}
-\rho_B[V_G,T]&= B \frac{h}{e^2} V_G^{-\alpha_1} \left(\begin{aligned}
-&\frac{1}{\exp\left[(0.059\text{ eV})/k_B T\right]-1}\\ &\hspace{2cm}+\frac{6.5}{\exp\left[(0.115\text{ eV})/k_B T\right]-1}
-\end{aligned}\right)
 \end{align}
 
 \subsection{hBN transfer}
