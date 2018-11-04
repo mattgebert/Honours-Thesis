@@ -86,7 +86,7 @@
 		After three trials using aluminium oxide and varying the exfoliation method, Torben suggested we try some other oxides for something more reliable and clean, particularly for the time window of this project. 
 	
 	\subsection{SnO \& Bi$_2$O$_3$}
-	After switching away from \aluminimumoxide{}, I tried to start using \tinoxide{}, \bismuthoxide{} and \galliumoxide{}. Hareem assisted me with transfering \bismuthoxide{} and \tinoxide{} onto desired substrates, using the same base method of exfoliation in a low oxygen fumehood, but with a few modifications. 
+	After switching from \aluminimumoxide{}, I tried to start using \tinoxide{}, \bismuthoxide{} and \galliumoxide{}(see \cref{sec:smearing} below). Hareem assisted me with transferring \bismuthoxide{} and \tinoxide{} onto desired substrates, using the same base method of exfoliation in a low oxygen fumehood, but with a few modifications. 
 	
 	Different from \aluminimumoxide{}, we used pure tin and bismuth (no need for a gallium alloy) and melted the chunks on a hotplate at 330 $^\circ$C and 270 $^\circ$C  respectively. We also used glass slides to `sacrifice' a layer of outer material before proceeding to attempt to exfoliate a layer of material.
 	
@@ -135,13 +135,79 @@
 		\caption[\bismuthoxide{} and \tinoxide{} stamped on \silicondioxide{}]{Deposition of \bismuthoxide{} and \tinoxide{} onto \silicondioxide{}. Scale bar: 0.13mm}\label{fig:transfer_bi&sno_on_si}
 	\end{figure}
 	
-	Sheets are much more uniform and easy to come by than that of \aluminimumoxide{}. Unfortunately it was still clear () that, for both bismuth and tin metals, adhesion to gold contacts was still a significant problem and resulted in very little oxide transfer. This is likely due to the breaking of the thin oxides surface during contact and interaction thereafter of metals.
-	\begin{figure}
-		
+	Sheets are much more uniform and easy to come by than that of \aluminimumoxide{}. Unfortunately it was still clear (\cref{fig:goldbismuthtin}) that, for both bismuth and tin metals, adhesion to gold contacts was still a significant problem and resulted in very little oxide transfer. This is likely due to the breaking of the thin oxides surface during contact and interaction thereafter of metals.
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}[t]{0.19\textwidth}
+			\includegraphics[width=\textwidth]{chap5/bi2o3/gtransfer1}
+			\caption{Bismuth/gold interaction}\label{fig:goldbistin1}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.19\textwidth}
+			\includegraphics[width=\textwidth]{chap5/bi2o3/gtransfer2}			
+			\caption{Bismuth removing gold and revealing chromium layer underneath}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.19\textwidth}
+			\includegraphics[width=\textwidth]{chap5/bi2o3/gtransfer3}
+			\caption{Bismuth/gold interaction}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.19\textwidth}
+			\includegraphics[width=\textwidth]{chap5/bi2o3/gtransfer4}
+			\caption{Bismuth removing areas of gold}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.19\textwidth}
+			\includegraphics[width=\textwidth]{chap5/sno/gtransfer1}
+			\caption{Tin removing gold}
+		\end{subfigure}\\
+		\begin{subfigure}[t]{0.19\textwidth}
+			\includegraphics[width=\textwidth]{chap5/sno/gtransfer2}
+			\caption{Tin adhering to gold of device pads}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.19\textwidth}
+			\includegraphics[width=\textwidth]{chap5/sno/gtransfer3}
+			\caption{Tin depositing some small oxide}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.19\textwidth}
+			\includegraphics[width=\textwidth]{chap5/sno/gtransfer4}
+			\caption{Tin removing large area gold}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.19\textwidth}
+			\includegraphics[width=\textwidth]{chap5/sno/gtransfer5}
+			\caption{Tin not interacting with CVD graphene, but adhering to gold pad.}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.19\textwidth}
+			\includegraphics[width=\textwidth]{chap5/sno/gtransfer6}
+			\caption{\tinoxide{} with gold removal.}
+		\end{subfigure}
+		\caption[Strong gold bismuth/tin interaction]{Strong gold bismuth/tin interaction. All images with same scalebar as \cref{fig:goldbistin1}, 130 $\mu$m.}\label{fig:goldbismuthtin}
 	\end{figure}
 	
+	To reduce this gold-liquid metal reaction occuring across gallium, bismuth and tin, we (my supervisors \& Torben) concluded we had a few options to proceed. Firstly, other metals could be used to make conduction pads such as tungsten, which would react less with the liquid metals. Secondly the possibility of a different approach such as transferring oxides onto \silicondioxide{} and then attempting some transfer of graphene, like with CVD. 
 	
-	\section{Smearing Ga$_2$O$_3$}
+	Thirdly, we could try to add layers of protection above the gold to create distance from the liquid metal. An issue with this method is that for thin oxides, creating high 2D lithography structures begins to create bends/steps in any oxide deposition possibly reducing the chance of a successful transfer.
+	
+	We decided to attempt using extra deposition layers to protect our gold contact pads, because transferring would take some time and have slow throughput, and gold was quite preferential due to it's conductive properties and use in the probestation.
+	
+	\section{Smearing Ga$_2$O$_3$}\label{sec:smearing}
+	
+	\begin{figure}
+		\begin{subfigure}{0.24\textwidth}
+			\includegraphics[width=\textwidth]{chap5/ga2o3/proc1}
+			\caption{Liquid metal droplet placed directly between \silicondioxide{} wafers}
+		\end{subfigure}
+		\begin{subfigure}{0.24\textwidth}
+			\includegraphics[width=\textwidth]{chap5/ga2o3/proc2}
+			\caption{Liquid metal droplet smeared by pressing \silicondioxide{} together in a directional action}
+		\end{subfigure}
+		\begin{subfigure}{0.24\textwidth}
+			\includegraphics[width=\textwidth]{chap5/ga2o3/proc3}
+			\caption{Cleaning of remaining gallium metal in 100 $^\circ$C water with cotton buds}
+		\end{subfigure}
+		\begin{subfigure}{0.24\textwidth}
+			\includegraphics[width=\textwidth]{chap5/ga2o3/proc3}
+			\caption{Remaining \galliumoxide{} with some gallium metal residues}
+		\end{subfigure}
+		\caption[\galliumoxide{} transfer process]{\galliumoxide{} transfer process}
+	\end{figure}
 	
 	\subsection{Devices}
 	
