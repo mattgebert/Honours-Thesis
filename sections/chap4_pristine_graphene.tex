@@ -172,7 +172,23 @@ To check the validity of this method, I compare the geometric factors calculated
 	\end{figure}
 
 \section{Temperature \& gate dependent conductivity}
-For two devices, CVD01 and EXF06 I was able to capture a reasonable spread of temperature data to analyse the phonon contributions to graphene's transport properties. 
+For two devices, CVD01 and EXF06 I was able to capture a reasonable spread of temperature data to analyse the phonon contributions to graphene's transport properties. The qualitative change in their gate voltage - conductivity (VgC) curves are shown below.
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap4/exf06/EXF006_Cond_vs_T_plot_centred}
+		\caption{EXF06}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap4/cvd01/CVD001_Cond_vs_T_plot}
+		\caption{CVD01}
+	\end{subfigure}
+	\caption[Changes in gate-voltage conductivity with temperature]{Temperature dependence of VgC curves. Here the gate voltages have been shifted so that the Dirac point of each temperature data run is found at 0V.}
+\end{figure}
+
+It is clear that in both CVD01 and EXF06 that as temperature increases, the resistivity of graphene increases, as the slope of the conductivity clearly drops off in higher carrier density.
 
 \subsection{$V_G$ R mobility}
 
@@ -186,19 +202,40 @@ Having fitted \cref{eqn:gate_dependent_conductivity} for each temperature, the f
 At low temperature  ($\leq 130K$) LA phonons in graphene are expected to weakly dominate scattering, but at higher temperature remote phonon scattering from \silicondioxide{} is expected to dominate \cite{chen_intrinsic_2008}. This is clear in \cref{fig:temp_mobility}, particularly with the steep decent in mobility after 300K.
 
 \subsection{Temperature dependent conductivity}
-To properly analyse the mobility, I will first need to fit the conductivity across gate voltage and temperature, and then the use of $\mu = \frac{\sigma}{N e}$. Here I will show the attempts to produce fits to the temperature and gate dependent conductivity.
+As described above, a more comprehensive analysis of the conductivity is required to really determine the mobility behaviour. I fit the conductivity across gate voltage and temperature, and show the remote phonon contribution to temperature and gate dependent conductivity.
 \begin{align}
 \rho[V_g,T] = \rho_0[V_g] + \rho_A[T] + \rho_B[Vg,T] \label{eqn:temp_resistivity}
 \end{align}
-To investigate the contribution of phonons (both longitudinal acoustic and remote polar) to resistivity using the temperature spread of the data taken for devices, my fitting function (\cref{eqn:temp_resistivity}) comprises of three components. $\rho_0$ is the intrinsic gate dependent conductivity found near 0K (we have to allow a free parameter due to not having a measurement near absolute zero), $\rho_A$ is the longitudinal acoustic phonons found within graphene which scales linearly with temperature, and $\rho_B$ is the contribution from remote polar phonons found in \silicondioxide{} affected by both the gating voltage (affecting the polarity) and the temperature (vibrational excitations).
+To investigate the contribution of phonons (both longitudinal acoustic and remote polar) to resistivity using the temperature spread of the data taken for devices, my fitting function (\cref{eqn:temp_resistivity}) comprises of three components. $\rho_0$ is the intrinsic gate dependent resistivity found near 0K (we have to allow a free parameter due to not having a measurement near absolute zero), $\rho_A$ is the longitudinal acoustic phonons found within graphene which scales linearly with temperature, and $\rho_B$ is the contribution from remote polar phonons found in \silicondioxide{} affected by both the gating voltage (affecting the polarity) and the temperature (vibrational excitations).
 \begin{align}
-\rho_A[T] &= \left(\frac{h}{e^2}\right) \frac{\pi2 Da^2 k_B T}{2 h^2 \rho_S V_s^2 V_F^2}\\
+\rho_A[T] &= \left(\frac{h}{e^2}\right) \frac{\pi2 Da^2 k_B T}{2 h^2 \rho_S V_s^2 V_F^2}\label{eqn:acoustic_phonon}\\
 \rho_B[V_G,T]&= B \frac{h}{e^2} V_G^{-\alpha_1} \left(\begin{aligned}
 &\frac{1}{\exp\left[(0.059\text{ eV})/k_B T\right]-1}\\ &\hspace{2cm}+\frac{6.5}{\exp\left[(0.115\text{ eV})/k_B T\right]-1}
-\end{aligned}\right)
+\end{aligned}\right)\label{eqn:remote_phonon}
 \end{align}
-Here 
+For \cref{eqn:acoustic_phonon}, $k_B$ is the Boltzmann constant, $\rho_s$ is the 2D mass density of graphene, $v_F$ is the Fermi velocity, $v_s$ is the velocity of sound and $D_A$ is a fitted parameter, the deformation potential.
+\cref{eqn:remote_phonon} is a combination of two surface phonons in \silicondioxide{}, given by Bose-Einstein distributions \cite{chen_intrinsic_2008}. These distributions come from the optical phonon energies in \silicondioxide{}, at 59 meV and 155 meV \cite{fratini_substrate-limited_2008}.
 
+I used three different fits to observe the presence of these phonons in graphene.
+\begin{figure}[H]
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap4/exf06/EXF006_Res_vs_T_upward}
+		\caption[EXF06 temperature dependent conductivity]{Gate and temperature dependent conductivity of EXF06. 3 fits have been conducted over different domains due to the bump that occurs at about 330 $^\circ$K}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{chap4/cvd01/CVD001_Res_vs_T_downward}
+		\caption[CVD01 temperature dependent conductivity]{Gate and temperature dependent conductivity of CVD01}
+	\end{subfigure}
+\end{figure}
+
+
+
+
+
+
+\section{OTHER}
 \begin{align}
 	C_{\text{flake}} = \frac{G_{\text{SiO}_2}-G_{\text{flake}}}{G_{\text{SiO}_2}}
 \end{align}
