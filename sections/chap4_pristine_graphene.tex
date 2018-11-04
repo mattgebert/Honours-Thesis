@@ -6,7 +6,7 @@
 Graphene devices first need to have their transport properties measured in their pristine condition, prior to the application of thin oxides. Doing this will allow a comparison of the electrical transport properties before and after transfer, to see if there's any resulting enhancement. Here I analyse the resistance measurements taken for both graphene and CVD graphene. I will consider their dependence upon gate voltage and temperature.
 
 \section{Resistance to resistivity}
-The resistivity of a material is a core property that tells you it's behaviour in a bulk geometry. For 3D materials, resistivity is in the units of Ohms per meter. You can think about this single length proportionality coming from flowing charge through a cross section, but over some length. In 2D materials, resistivity is measured in Ohms, because there are only two dimensions, the length and the width of flat material. The partial form of the resistivity is listed in \cref{eqn:partial_resistivtiy}, where $w(L)$ is the width of the material as a function of Length.\\
+The resistivity of a material is a core property describes its behaviour in a bulk geometry. For 3D materials, resistivity is in the units of Ohms per meter. You can think about this single length proportionality coming from flowing charge through a cross section, but over some length. In 2D materials, resistivity is measured in Ohms, because there are only two dimensions, the length and the width of flat material. The partial form of the resistivity is listed in \cref{eqn:partial_resistivtiy}, where $w(L)$ is the width of the material as a function of Length.\\
 \begin{minipage}{0.5\textwidth}
 	\begin{align}
 	\partial R = \frac{\rho}{w(L)}\partial L\label{eqn:partial_resistivtiy}
@@ -69,7 +69,7 @@ After converting resistance measured to resistivity, I invert the resistivity to
 \begin{align}
 \sigma = \sqrt{\left(N^{*} e \mu\right)^2 + \left(\rho_S + \frac{1}{N e \mu}\right)^{-2}} \label{eqn:gate_dependent_conductivity}
 \end{align}
-Here $N^{*}$ (also written as $\mathcal{N}$) is the `residual carrier density'  ($m^{-2}$) \cite{adam_self-consistent_2007}, $N$ is the carrier density ($m^{-2}$), e is the elementary charge, $\mu$ is the mobility ($m^2/Vs$) and $\rho_S$ is a resistivity parameter that affects the curvature of of the gate voltage dependent conductivity, particularly in the high voltage limits, but it's origins are unclear.
+Here $N^{*}$ (also written as $\mathcal{N}$) is the `residual carrier density'  ($m^{-2}$) \cite{adam_self-consistent_2007}, $N$ is the carrier density ($m^{-2}$), e is the elementary charge, $\mu$ is the mobility ($m^2/Vs$) and $\rho_S$ is a resistivity parameter that affects the curvature of of the gate voltage dependent conductivity, particularly in the high voltage limits, but its origins are unclear.
 The carrier density $N$ is calculated by considering the accumulated charge at the gate. This amount can be calculated for each device, by considering the capacitance of 285nm \silicondioxide{} and the difference in gate voltage from the Dirac point.
 \begin{align}
 	N(V_G) &= \frac{C_g}{e} \left|V_{\text{Dirac}}-V_G\right|\\
@@ -159,12 +159,12 @@ To check the validity of this method, I compare the geometric factors calculated
 		\implies \mathcal{G} &= 1.58097
 	\end{align}
 	This is almost exactly a 1\% difference from our image found geometric value of $\mathcal{G} = 1.59773$, which shows the reliability of this method. 
-	It's noteworthy that finding the geometric value from images will have a degree of uncertainty ($\approx$10\%) in the width and length values used, due to the scaling of images and placement of dimension markers.
+	Its noteworthy that finding the geometric value from images will have a degree of uncertainty ($\approx$10\%) in the width and length values used, due to the scaling of images and placement of dimension markers.
 
 	\paragraph{CVD01}
 	Performing the same analysis in our dataset for CVD graphene, I find the minimum conductivity scales from 47.7959 ($e^2/h$) to 4.3794 ($e^2/h$), when the mobility $\mu$ and residual carrier density $\mathcal{N}$ converge on 0.157402 m$^2$/Vs and 6.67275 $\times10^{15}$/m$^2$ respectively (rows 63 \& 64 of appendix \ref{app:transport_theoretical}). This results in a geometric factor of $\mathcal{G} 10.7959$.
 
-	Considering the visual geometry of our CVD graphene in \cref{fig:cvd_sample}, this is likely a reasonable geometric factor, given for a rectangular case $\mathcal{G}$ goes as W/L. In the figure, the majority of the current probably flows through the gold probes rather than through the bulk graphene, and considering the width to length ratio between those probes, I'd suggest it's approximately a factor of 10.
+	Considering the visual geometry of our CVD graphene in \cref{fig:cvd_sample}, this is likely a reasonable geometric factor, given for a rectangular case $\mathcal{G}$ goes as W/L. In the figure, the majority of the current probably flows through the gold probes rather than through the bulk graphene, and considering the width to length ratio between those probes, I'd suggest its approximately a factor of 10.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.4\textwidth]{chap2/cvd_graphene}
